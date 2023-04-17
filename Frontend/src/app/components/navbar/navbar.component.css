@@ -6,3 +6,9 @@
 .nav-link:hover{
     color: rgb(25, 0, 255);
 }
+
+.btn-group:hover{
+
+    cursor: pointer;
+
+}
