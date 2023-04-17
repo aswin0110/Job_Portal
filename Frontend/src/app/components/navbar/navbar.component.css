@@ -3,3 +3,6 @@
     font-family: sans-serif;
     
 }
+.nav-link:hover{
+    color: rgb(25, 0, 255);
+}
