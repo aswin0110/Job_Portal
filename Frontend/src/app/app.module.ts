@@ -11,6 +11,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CareerComponent } from './pages/career/career.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { AlumniComponent } from './components/alumni/alumni.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     SignupComponent,
     CareerComponent,
     ContactusComponent,
-    AboutusComponent
+    AboutusComponent,
+    AlumniComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
