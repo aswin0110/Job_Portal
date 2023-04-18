@@ -11,6 +11,9 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CareerComponent } from './pages/career/career.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AlumniComponent } from './components/alumni/alumni.component';
+import { EmployeeComponent } from './components/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     SignupComponent,
     CareerComponent,
     ContactusComponent,
-    AboutusComponent
+    AboutusComponent,
+    AdminComponent,
+    AlumniComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
