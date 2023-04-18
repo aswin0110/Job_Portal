@@ -6,6 +6,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { CareerComponent } from './pages/career/career.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { AlumniComponent } from './components/alumni/alumni.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'contactus', component:ContactusComponent},
   {path:'career', component:CareerComponent},
-  {path:'aboutus', component:AboutusComponent}
+  {path:'aboutus', component:AboutusComponent},
+  {path:'alumni', component:AlumniComponent},
+
 ];
 
 @NgModule({
