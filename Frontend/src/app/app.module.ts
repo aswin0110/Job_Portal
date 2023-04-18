@@ -11,8 +11,14 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CareerComponent } from './pages/career/career.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+<<<<<<< HEAD
 import { AlumniComponent } from './components/alumni/alumni.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+=======
+import { AdminComponent } from './components/admin/admin.component';
+import { AlumniComponent } from './components/alumni/alumni.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+>>>>>>> 56de68d20c59ee85c5de89381b2d39f637241cee
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CareerComponent,
     ContactusComponent,
     AboutusComponent,
+<<<<<<< HEAD
     AlumniComponent
+=======
+    AdminComponent,
+    AlumniComponent,
+    EmployeeComponent
+>>>>>>> 56de68d20c59ee85c5de89381b2d39f637241cee
   ],
   imports: [
     BrowserModule,
