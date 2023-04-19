@@ -5,10 +5,7 @@
           <img src="../../../assets/images/alumni.jfif">
           <span class="nav-item">Alumni</span>
         </a></li>
-        <li><a href="#">
-          <span class="nav-item">Dashboard</span>
-        </a></li>
-        <li><a href="#">
+        <li><a routerLink="/alumni/manageJobPost">
           <span class="nav-item">Manage Job Post</span>
         </a></li>
         <li><a href="#">
@@ -20,4 +17,13 @@
         </a></li>
       </ul>
     </nav>
-  </div>
+
+
+    <section class="main">
+    <section class="right-section">
+        <div class="right-content">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+    </section>
+</div>

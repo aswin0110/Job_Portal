@@ -15,6 +15,8 @@ import { AlumniComponent } from './components/alumni/alumni.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './components/admin/admin.component';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { AlumniManageJobpostComponent } from './components/alumni-manage-jobpost/alumni-manage-jobpost.component';
+import { AlumniManageAccountComponent } from './components/alumni-manage-account/alumni-manage-account.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { EmployeeComponent } from './components/employee/employee.component';
     AlumniComponent,
     AdminComponent,
     EmployeeComponent,
+    AlumniManageJobpostComponent,
+    AlumniManageAccountComponent,
   ],
   imports: [
     BrowserModule,
