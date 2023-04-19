@@ -1,31 +1,10 @@
-/* *{
-    padding: 0;
-    margin: 0;
-    color: #643434;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-} */
-
-.whole-bg::before{
-    background-image: url('../../../assets/images/bg cont.webp');
+.container{
+    /* background-image: url('../../../assets/images/bg cont.webp'); */
     width: 100%;
-    /* height: 100%; */
-    /* background-size: 100% 110vh; */
-    position: fixed;
+    height: 100vh;
+    background-size: 100% 110vh;
+    position: relative;
     background-repeat: no-repeat;
-    /* background-color: rgba(255,255,255,0.2); */
-
-    /* color: #643434;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    border: none; */
-    /* opacity: .35; */
-    background-size: cover;
-    
-   
-    
-  
 }
 header{
     position: absolute;
@@ -36,17 +15,17 @@ header{
 }
 header h1{
     font-size: 30px;
-    color: white;
 }
 .empty{
-     width: 100%; 
-     height: 100vh; 
-    
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgba(0,0,0,0.5); */
     background-image: url('../../../assets/images/bg cont.webp');
-    background-size: cover;
-    
-
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 110vh;
     position: fixed;
+    /* position: absolute; */
     top: 0px;
     left: 0;
     z-index: -1;
@@ -67,14 +46,12 @@ section i{
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: rgba(255,255,255,0.2);
-    color: white;
+    background-color: rgba(255,255,255,0.8);
+    color: black;
     text-align: center;
 }
-section p{
-    color: white;
-}
 .form{
+  
     display: flex;
     position: absolute;
     top: 80px;
@@ -125,16 +102,16 @@ section p{
     pointer-events: none;
 }
 .form .contact-form input[type=submit]{
-    background-color: rgb(11, 170, 209);
-    border: 2px solid rgb(11, 170, 209);
+    background-color: dodgerblue;
+    border: 2px solid dodgerblue;
     font-size: 18px;
     width: 50%;
     height: 40px;
-    margin-top: -6px;
+    margin-top: -5px;
 }
 .form .contact-form input[type=submit]:hover{
     background-color: transparent;
-    color: white;
+    color: dodgerblue;
 }
 .media{
     position: absolute;
@@ -142,12 +119,9 @@ section p{
     right: 20vh;
     display: flex;
     list-style: none;
-    margin-top: 5px;
-    
 }
 .media li{
     margin: 20px 30px;
-    color: white;
 }
 @media screen and (max-width: 900px){
     body{
@@ -185,17 +159,30 @@ section p{
         right: 30px;
     }
 }
-
-.content h2{
-    color: white;
+header h1{
+    color: #fff;
 }
-
-.contact-form span{
-    color: white;
-}
-.contact-form input{
-    color: white;
+header h4{
+    color: #fff;
 }
 header p{
-    color: white;
+    color: #fff;
+}
+section h2{
+    color: #fff;
+}
+section p{
+    color: #fff;
+}
+.contact-form span{
+    color: #fff;
+}
+.contact-form input{
+    color: #fff;
+}
+.contact-form textarea{
+    color: #fff;
+}
+.media{
+    color: #fff;
 }
