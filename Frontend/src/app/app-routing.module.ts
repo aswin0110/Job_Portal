@@ -17,7 +17,12 @@ const routes: Routes = [
   {path:'career', component:CareerComponent},
   {path:'aboutus', component:AboutusComponent},
   {path:'admin',component:AdminComponent},
+<<<<<<< HEAD
   {path:'alumni', component:AlumniComponent}
+=======
+  {path:'alumni',component:AlumniComponent},
+
+>>>>>>> 381e586eb76aa0cc452a6c60c5de3541fcd67428
 ];
 
 @NgModule({
