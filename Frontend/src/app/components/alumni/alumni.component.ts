@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./alumni.component.css']
 })
 export class AlumniComponent {
+  selectedMenu:any='Home';
+
+
+
+
+  goTo(paramText:string){
+    this.selectedMenu =paramText
+  }
 
 }
