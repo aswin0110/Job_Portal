@@ -77,7 +77,7 @@ section p{
 .form{
     display: flex;
     position: absolute;
-    top: 0;
+    top: 80px;
     left: 0;
     margin-left: 50%;
     justify-content: center;
