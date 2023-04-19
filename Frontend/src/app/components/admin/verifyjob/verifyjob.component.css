@@ -106,7 +106,7 @@ a:hover i{
   color: rgb(110, 109, 109);
   cursor: pointer;
 }
-.main .users{
+.users{
   display: flex;
   width: 100%;
 }

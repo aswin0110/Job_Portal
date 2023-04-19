@@ -8,6 +8,9 @@ import { CareerComponent } from './pages/career/career.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AlumniComponent } from './components/alumni/alumni.component';
+import { ManageacComponent } from './components/admin/manageac/manageac.component';
+import { VerifyjobComponent } from './components/admin/verifyjob/verifyjob.component';
+import { AnalyticsComponent } from './components/admin/analytics/analytics.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -16,13 +19,14 @@ const routes: Routes = [
   {path:'contactus', component:ContactusComponent},
   {path:'career', component:CareerComponent},
   {path:'aboutus', component:AboutusComponent},
-  {path:'admin',component:AdminComponent},
-<<<<<<< HEAD
+  {path:'admin',component:AdminComponent,
+  children:[
+    {path:'manage',component:ManageacComponent},
+    {path:'verify',component:VerifyjobComponent},
+    {path:'',component:AnalyticsComponent}
+  ]  
+},
   {path:'alumni', component:AlumniComponent}
-=======
-  {path:'alumni',component:AlumniComponent},
-
->>>>>>> 381e586eb76aa0cc452a6c60c5de3541fcd67428
 ];
 
 @NgModule({
