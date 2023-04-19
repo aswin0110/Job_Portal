@@ -115,7 +115,7 @@ section i{
 }
 .media{
     position: absolute;
-    top: 85vh;
+    top: 105vh;
     right: 20vh;
     display: flex;
     list-style: none;
