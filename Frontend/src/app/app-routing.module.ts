@@ -17,12 +17,14 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { JobpostComponent } from './components/employee/jobpost/jobpost.component';
 import { StudentProfileCreateComponent } from './components/student-profile-create/student-profile-create.component';
 import { JobApplicationComponent } from './components/job-application/job-application.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
   {path:'login', component:LoginpageComponent},
   {path:'signup', component:SignupComponent},
   {path:'contactus', component:ContactusComponent},
+  {path:'footer', component:FooterComponent},
   {path:'career', component:CareerComponent},
   {path:'aboutus', component:AboutusComponent},
   {path:'jobapplication', component:JobApplicationComponent},
