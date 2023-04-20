@@ -13,6 +13,8 @@ import { VerifyjobComponent } from './components/admin/verifyjob/verifyjob.compo
 import { AnalyticsComponent } from './components/admin/analytics/analytics.component';
 import { AlumniManageJobpostComponent } from './components/alumni-manage-jobpost/alumni-manage-jobpost.component';
 import { AlumniManageAccountComponent } from './components/alumni-manage-account/alumni-manage-account.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { JobpostComponent } from './components/employee/jobpost/jobpost.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -34,8 +36,16 @@ const routes: Routes = [
     {path:'manageAccount', component:AlumniManageAccountComponent}
   ]
 },
+{path:'employee',component:EmployeeComponent,
+  children:[
+    {path:'jobpost',component:JobpostComponent},
+    
+  ]  
+},
 
 ]
+  
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
