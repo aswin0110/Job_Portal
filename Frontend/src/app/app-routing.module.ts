@@ -11,6 +11,8 @@ import { AlumniComponent } from './components/alumni/alumni.component';
 import { ManageacComponent } from './components/admin/manageac/manageac.component';
 import { VerifyjobComponent } from './components/admin/verifyjob/verifyjob.component';
 import { AnalyticsComponent } from './components/admin/analytics/analytics.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { JobpostComponent } from './components/employee/jobpost/jobpost.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -24,6 +26,12 @@ const routes: Routes = [
     {path:'manage',component:ManageacComponent},
     {path:'verify',component:VerifyjobComponent},
     {path:'',component:AnalyticsComponent}
+  ]  
+},
+{path:'employee',component:EmployeeComponent,
+  children:[
+    {path:'jobpost',component:JobpostComponent},
+    
   ]  
 },
   {path:'alumni', component:AlumniComponent}
