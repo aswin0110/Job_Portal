@@ -106,15 +106,17 @@ a:hover i{
   color: rgb(110, 109, 109);
   cursor: pointer;
 }
-.users{
+/* .users{
   display: flex;
   width: 100%;
+} */
+.cards{
+  padding: 20px;
 }
-.users .card{
-  width: 25%;
-  margin: 10px;
+.users .card {
+  width: 100%;
+  margin: 0px 0px 0px 0px;
   background: #fff;
-  text-align: center;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -144,6 +146,7 @@ a:hover i{
   font-size: 14px;
   padding-right: 15px;
 }
+
 .users .card button{
   width: 100%;
   margin-top: 8px;
