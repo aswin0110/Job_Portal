@@ -11,6 +11,8 @@ import { AlumniComponent } from './components/alumni/alumni.component';
 import { ManageacComponent } from './components/admin/manageac/manageac.component';
 import { VerifyjobComponent } from './components/admin/verifyjob/verifyjob.component';
 import { AnalyticsComponent } from './components/admin/analytics/analytics.component';
+import { AlumniManageJobpostComponent } from './components/alumni-manage-jobpost/alumni-manage-jobpost.component';
+import { AlumniManageAccountComponent } from './components/alumni-manage-account/alumni-manage-account.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -26,11 +28,17 @@ const routes: Routes = [
     {path:'',component:AnalyticsComponent}
   ]  
 },
-  {path:'alumni', component:AlumniComponent}
-];
+  {path:'alumni', component:AlumniComponent,
+  children:[
+    {path:'manageJobPost', component:AlumniManageJobpostComponent},
+    {path:'manageAccount', component:AlumniManageAccountComponent}
+  ]
+},
+
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
