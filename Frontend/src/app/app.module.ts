@@ -20,6 +20,7 @@ import { VerifyjobComponent } from './components/admin/verifyjob/verifyjob.compo
 import { AnalyticsComponent } from './components/admin/analytics/analytics.component';
 import { JobpostComponent } from './components/employee/jobpost/jobpost.component';
 import { StudentProfileCreateComponent } from './components/student-profile-create/student-profile-create.component';
+import { JobApplicationComponent } from './components/job-application/job-application.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { StudentProfileCreateComponent } from './components/student-profile-crea
     AnalyticsComponent,
     JobpostComponent,
     StudentProfileCreateComponent,
+    JobApplicationComponent,
   ],
   imports: [
     BrowserModule,
