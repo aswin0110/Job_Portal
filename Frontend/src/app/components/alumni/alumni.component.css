@@ -23,6 +23,12 @@ nav{
   overflow: hidden;
   transition: 1s;
 }
+i{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+
 nav:hover{
   width: 280px;
   transition: 1s;

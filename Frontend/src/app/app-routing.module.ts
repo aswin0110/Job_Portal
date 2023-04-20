@@ -15,6 +15,7 @@ import { AlumniManageJobpostComponent } from './components/alumni-manage-jobpost
 import { AlumniManageAccountComponent } from './components/alumni-manage-account/alumni-manage-account.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { JobpostComponent } from './components/employee/jobpost/jobpost.component';
+import { StudentProfileCreateComponent } from './components/student-profile-create/student-profile-create.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'contactus', component:ContactusComponent},
   {path:'career', component:CareerComponent},
   {path:'aboutus', component:AboutusComponent},
+  {path:'studentProfileCreate', component:StudentProfileCreateComponent},
   {path:'admin',component:AdminComponent,
   children:[
     {path:'manage',component:ManageacComponent},

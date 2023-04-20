@@ -19,6 +19,7 @@ import { ManageacComponent } from './components/admin/manageac/manageac.componen
 import { VerifyjobComponent } from './components/admin/verifyjob/verifyjob.component';
 import { AnalyticsComponent } from './components/admin/analytics/analytics.component';
 import { JobpostComponent } from './components/employee/jobpost/jobpost.component';
+import { StudentProfileCreateComponent } from './components/student-profile-create/student-profile-create.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { JobpostComponent } from './components/employee/jobpost/jobpost.componen
     VerifyjobComponent,
     AnalyticsComponent,
     JobpostComponent,
+    StudentProfileCreateComponent,
   ],
   imports: [
     BrowserModule,
