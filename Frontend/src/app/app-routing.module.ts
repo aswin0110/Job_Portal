@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ManagejobComponent } from './components/employee/managejob/managejob.component';
 import { ManageaccountComponent } from './components/employee/manageaccount/manageaccount.component';
 import { ProfilematchComponent } from './components/employee/profilematch/profilematch.component';
+import { EmployeefrontComponent } from './components/employee/employeefront/employeefront.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -50,7 +51,8 @@ const routes: Routes = [
     {path:'jobpost',component:JobpostComponent},
     {path:'manage_job',component:ManagejobComponent},
     {path:'manage_account',component:ManageaccountComponent},
-    {path:'profile_match',component:ProfilematchComponent}
+    {path:'profile_match',component:ProfilematchComponent},
+    {path:'',component:EmployeefrontComponent}
   ]  
 },
 
