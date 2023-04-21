@@ -232,10 +232,12 @@
   border-color: var(--primary);
 }
 
-.page-header {
+/* .page-header { */
   /* background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../../../assets/images/contact-bg.jpeg) center center no-repeat; */
+/* .page-header {
+  background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../../../assets/images/) center center no-repeat;
   background-size: cover;
-}
+} */
 
 .breadcrumb-item + .breadcrumb-item::before {
   color: var(--light);

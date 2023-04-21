@@ -4,11 +4,13 @@
     font-family: 'poppins', sans-serif;
 }
 .bg{
-    background-image: url('../../../assets/images/bg login.webp');
+    background: url('../../../assets/images/signupimg.jpg'),rgba(0,0,0,.9) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-blend-mode: color;
     background-position: center;
     background-attachment: fixed;
+    /* min-height: 100vh; */
+    width: 100%;
     
 }
 
@@ -74,13 +76,15 @@ i{
     height: 37px;
     outline: none;
     width: 100%;
-    background: rgba(225,225,225,0.6);
+    background: rgba(0,0,0,0.4);
+    color: white;
     cursor: pointer;
     transition: .3s;
 }
 
 .submit:hover{
     box-shadow: 1px 5px 7px 1px rgba(0,0,0,0.3);
+    color: wheat;
 }
 
 .bottom{
