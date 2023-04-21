@@ -18,6 +18,9 @@ import { JobpostComponent } from './components/employee/jobpost/jobpost.componen
 import { StudentProfileCreateComponent } from './components/student-profile-create/student-profile-create.component';
 import { JobApplicationComponent } from './components/job-application/job-application.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ManagejobComponent } from './components/employee/managejob/managejob.component';
+import { ManageaccountComponent } from './components/employee/manageaccount/manageaccount.component';
+import { ProfilematchComponent } from './components/employee/profilematch/profilematch.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -45,7 +48,9 @@ const routes: Routes = [
 {path:'employee',component:EmployeeComponent,
   children:[
     {path:'jobpost',component:JobpostComponent},
-    
+    {path:'manage_job',component:ManagejobComponent},
+    {path:'manage_account',component:ManageaccountComponent},
+    {path:'profile_match',component:ProfilematchComponent}
   ]  
 },
 
