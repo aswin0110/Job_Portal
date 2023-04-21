@@ -83,16 +83,16 @@
     text-overflow: ellipsis;
     overflow-x: hidden;
     text-transform: capitalize;
-    padding-bottom: .5rem;
+    padding-bottom: .1rem;
 }
 
 .jobs-container .box-container .box .company p{
     color:#777;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .jobs-container .box-container .box .job-title{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: black;
     text-transform: capitalize;
     overflow-x: hidden;
