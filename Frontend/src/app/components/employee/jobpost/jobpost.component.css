@@ -218,3 +218,7 @@ table thead tr{
   color: #fff;
   transition: 0.5rem;
 }
+
+.createbtn:hover{
+  cursor: pointer;
+}
