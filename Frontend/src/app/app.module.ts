@@ -26,6 +26,7 @@ import { ManagejobComponent } from './components/employee/managejob/managejob.co
 import { ProfilematchComponent } from './components/employee/profilematch/profilematch.component';
 import { ManageaccountComponent } from './components/employee/manageaccount/manageaccount.component';
 import { EmployeracComponent } from './components/admin/employerac/employerac.component';
+import { JobpostformComponent } from './components/employee/jobpostform/jobpostform.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { EmployeracComponent } from './components/admin/employerac/employerac.co
     ManagejobComponent,
     ProfilematchComponent,
     ManageaccountComponent,
-    EmployeracComponent
+    EmployeracComponent,
+    JobpostformComponent
   ],
   imports: [
     BrowserModule,
