@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { JobApplicationComponent } from './components/job-application/job-applic
 import { ManagejobComponent } from './components/employee/managejob/managejob.component';
 import { ProfilematchComponent } from './components/employee/profilematch/profilematch.component';
 import { ManageaccountComponent } from './components/employee/manageaccount/manageaccount.component';
+import { EmployeracComponent } from './components/admin/employerac/employerac.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +50,14 @@ import { ManageaccountComponent } from './components/employee/manageaccount/mana
     ManagejobComponent,
     ProfilematchComponent,
     ManageaccountComponent,
+    EmployeracComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

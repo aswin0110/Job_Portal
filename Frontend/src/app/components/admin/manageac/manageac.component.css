@@ -218,3 +218,16 @@ table thead tr{
   color: #fff;
   transition: 0.5rem;
 }
+
+
+.deletebtn:hover{
+  cursor: pointer;
+}
+
+.createbtn:hover{
+  cursor: pointer;
+}
+.selectbtn{
+  display: flex;
+  align-items: baseline;
+}
