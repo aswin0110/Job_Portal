@@ -18,7 +18,7 @@ nav{
   bottom: 0;
   height: 70vh;
   left: 0;
-  width: 90px;
+  width: 55px;
   /* width: 280px; */
   background: #fff;
   overflow: hidden;
@@ -36,8 +36,8 @@ nav:hover{
 }
 
 .logo img{
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
 .logo span{
@@ -53,6 +53,11 @@ a{
   color: rgb(85, 83, 83);
   display: table;
   padding: 10px;
+}
+i{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
 }
 nav .fas{
   position: relative;
@@ -73,6 +78,7 @@ a:hover{
 a:hover i{
   color: #34AF6D;
   transition: 0.5s;
+  
 }
 .logout{
   position: absolute;
