@@ -21,6 +21,9 @@ import { AnalyticsComponent } from './components/admin/analytics/analytics.compo
 import { JobpostComponent } from './components/employee/jobpost/jobpost.component';
 import { StudentProfileCreateComponent } from './components/student-profile-create/student-profile-create.component';
 import { JobApplicationComponent } from './components/job-application/job-application.component';
+import { ManagejobComponent } from './components/employee/managejob/managejob.component';
+import { ProfilematchComponent } from './components/employee/profilematch/profilematch.component';
+import { ManageaccountComponent } from './components/employee/manageaccount/manageaccount.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { JobApplicationComponent } from './components/job-application/job-applic
     JobpostComponent,
     StudentProfileCreateComponent,
     JobApplicationComponent,
+    ManagejobComponent,
+    ProfilematchComponent,
+    ManageaccountComponent,
   ],
   imports: [
     BrowserModule,
