@@ -14,7 +14,9 @@
     color: var(--white);
 }
  */
-
+.box{
+    transform: scale(0.7);
+}
  .heading{
     text-align: center;
     margin-bottom: 2rem;

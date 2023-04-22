@@ -40,7 +40,8 @@ const routes: Routes = [
     {path:'',component:AnalyticsComponent}
   ]  
 },
-  {path:'alumni', component:AlumniComponent,
+{path: 'alumni', redirectTo:'/alumni/manageJobPost', pathMatch: 'full'}, 
+{path:'alumni', component:AlumniComponent,
   children:[
     {path:'manageJobPost', component:AlumniManageJobpostComponent},
     {path:'manageAccount', component:AlumniManageAccountComponent}

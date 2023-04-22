@@ -11,6 +11,9 @@
 }
 
 /*  import google fonts */
+.container{
+  border: 1px solid rgb(202, 201, 201);
+}
 nav{
   position: sticky;
   top: 0;
@@ -19,7 +22,8 @@ nav{
   left: 0;
   width: 90px;
   /* width: 280px; */
-  background: #fff;
+  background: #FFF;
+  border-radius: 10px;
   overflow: hidden;
   transition: 1s;
 }
@@ -95,9 +99,6 @@ a:hover i{
   width: 100%;
 }
 
-
-
-/*Attendance List serction  */
 .right-section{
   margin-top: 20px;
   text-transform: capitalize;
