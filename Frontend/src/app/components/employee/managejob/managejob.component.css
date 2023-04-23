@@ -1,4 +1,4 @@
-.home-container{
+/* .home-container{
     background:url('../../../../assets/images/managejob.webp'), rgba(0,0,0,.7) no-repeat;
     background-size: cover;
     background-position: center;
@@ -22,10 +22,8 @@
 }
 .home-container .home form:hover{
     transform: translateY(-6px);
-    /* transform: translatex(-6px); */
 
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    /* cursor: pointer; */
 }
 
 .home-container .home form h3{
@@ -67,4 +65,11 @@
 .btn:hover{
     background-color: black;
     color: #fff;
+} */
+
+.card{
+    padding: 15px;
+}
+.col-3{
+    display: contents;    
 }
