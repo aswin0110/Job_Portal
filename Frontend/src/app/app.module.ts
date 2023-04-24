@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDialogModule} from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +30,7 @@ import { ManageaccountComponent } from './components/employee/manageaccount/mana
 import { EmployeracComponent } from './components/admin/employerac/employerac.component';
 import { JobpostformComponent } from './components/employee/jobpostform/jobpostform.component';
 import { EmployeefrontComponent } from './components/employee/employeefront/employeefront.component';
+import { SignupService } from './services/signup.service';
 
 @NgModule({
   declarations: [
@@ -60,10 +63,13 @@ import { EmployeefrontComponent } from './components/employee/employeefront/empl
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

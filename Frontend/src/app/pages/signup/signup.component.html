@@ -1,11 +1,4 @@
 
-<!-- <style>
-    body{
-       
-    background-image: url('/assets/images/login bg.jpg');
-}
-    
-</style> -->
 <div class="bg">
     <div class="box">
         <div class="container">
@@ -15,28 +8,36 @@
             </div>
     
             
-            <div class="input-field">
-                <input type="email" class="input" placeholder="email" required>
-                <i class="bi bi-person"></i>
-            </div>
-            <div class="input-field">
-                <input type="number" class="input" placeholder="contact number" required>
-                <i class="bi bi-telephone"></i>
-            </div>
-            <div class="input-field">
-                <input type="password" class="input" placeholder="password" required>
-                <i class="bi bi-lock"></i>
-            
-            </div>
-            <div class="input-field">
-                <input type="password" class="input" placeholder="re-enter password" required>
-                <i class="bi bi-lock"></i>
-            
-            </div>
-    
-            <div class="input-field">
-                <input type="submit" class="submit" value="Signup"y routerLink="/studentProfileCreate">
-            </div>
+            <form  [formGroup]="data" (ngSubmit)="signupform(data)">
+
+                <div class="input-field">
+                    <input type="text" class="input" placeholder="Name" required formControlName="name">
+                    <i class="bi bi-person"></i>
+                </div>
+                <div class="input-field">
+                    <input type="email" class="input" placeholder="email" required formControlName="email">
+                    <i class="bi bi-telephone"></i>
+                    <small *ngIf="data.get('email').touched && data.get('email').errors">Enter valid email</small>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input" placeholder="password" required formControlName="password">
+                    <i class="bi bi-lock"></i>
+                    <small *ngIf="data.get('password').touched && data.get('password').errors">Password required(minimum 6 characters)</small><br>
+                      <span>{{msg}}</span>
+                
+                </div>
+                <!-- <div class="input-field">
+                    <input type="password" class="input" placeholder="re-enter password" required>
+                    <i class="bi bi-lock"></i>
+                
+                </div> -->
+        
+                <div class="input-field">
+                    <!-- <input type="submit" class="submit" value="Signup" > -->
+                    <button routerLink="" > signup</button>
+                </div>
+
+            </form>
     
             <div class="bottom">
                 
