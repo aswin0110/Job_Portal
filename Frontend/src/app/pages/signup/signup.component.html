@@ -8,7 +8,7 @@
             </div>
     
             
-            <form  [formGroup]="data" (ngSubmit)="signupform(data)">
+            <form  [formGroup]="data" >
 
                 <div class="input-field">
                     <input type="text" class="input" placeholder="Name" required formControlName="name">
@@ -34,7 +34,7 @@
         
                 <div class="input-field">
                     <!-- <input type="submit" class="submit" value="Signup" > -->
-                    <button routerLink="" > signup</button>
+                    <button routerLink="/signup" (click)="signupform(data)"> signup</button>
                 </div>
 
             </form>

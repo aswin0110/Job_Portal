@@ -30,7 +30,6 @@ import { ManageaccountComponent } from './components/employee/manageaccount/mana
 import { EmployeracComponent } from './components/admin/employerac/employerac.component';
 import { JobpostformComponent } from './components/employee/jobpostform/jobpostform.component';
 import { EmployeefrontComponent } from './components/employee/employeefront/employeefront.component';
-import { SignupService } from './services/signup.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +68,7 @@ import { SignupService } from './services/signup.service';
     HttpClientModule
     
   ],
-  providers: [SignupService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -42,6 +42,9 @@ export class SignupComponent implements OnInit{
       else if(this.signupstatus.status =='2'){
         this.msg = 'Enter Required details'
       }
+      else if(this.signupstatus.status =='0'){
+        this.msg = 'Enter Required details'
+      }
       else{
         console.log("signup failed");
         this.msg = 'Email ID alredy exists'
