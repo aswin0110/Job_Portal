@@ -4,41 +4,55 @@ const router = express.Router()
 
 const signupData = require('../model/signupModel')
 
-router.post('/signup', async (req,res) =>{
+
+// signup
+router.post('/signup',  async (req,res) =>{
+    
+
     try {
-    var data = req.body
 
-    
-    let mail = data.email
-    let pass = data.password
+        let data = req.body
+        let name = data.email
+        let mail = data.email
+        let pass = data.password
 
-    // check the email is alredy in there
-    const list = await signupData.find({email:mail})
-    // console.log(list);
-    // console.log("data", data);
-    
+        // console.log(data, mail, pass);
+
+        let list =await signupData.find({email:mail})
         
-    if(list ==" " && mail !='' && pass !=''){
-        const newUser = new signupData(data)
-        const saveData = await newUser.save()
-        res.json({"status":"1"}) //success
+        if(list=='' && mail !=''&& pass !=''){
+            console.log('1');
+            const newUser = new signupData(data)  // checking incoming data with schema
+            const savedUser = await newUser.save()
+            // console.log(savedUser);
+            res.json({status:'1'})
+            // res.json({status:'success account created'})
+        }
+        else if(mail == '' || pass == '' || name == ''){
+            console.log('Please enter name, email and password');
+            res.json({status:'2'})
+            // res.json({status:'Please enter name, email and password'})
 
-    }
-    else if(mail == '' || pass == ''){
-        res.json({"status":"2"})
-    }
-    else{
-        res.json({"status":"0"}) //email alredy exist
-    }
+        }
+        else{
+            res.json({status:'mail id alredy exist please try with new one'})
+            console.log("mail id alredy exist please try with new one");
+        }
+
         
     } catch (error) {
-        console.log(error)
-        res.json({"status":"2"})
+        console.log(error.message);
+        
     }
-    // res.send(data.name)
+    
 
 })
 
+// get all signup details : admin use only
+router.get('/admin/signupdetails', async (req,res)=>{
+    let data = await signupData.find()
+    res.json(data)
+})
 
 
 module.exports = router
