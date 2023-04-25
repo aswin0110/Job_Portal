@@ -6,7 +6,7 @@ const signupData = require('../model/signupModel')
 
 
 // signup
-router.post('/signup',  async (req,res) =>{
+router.post('/',  async (req,res) =>{
     
 
     try {
@@ -46,6 +46,38 @@ router.post('/signup',  async (req,res) =>{
     }
     
 
+})
+
+router.post('/signup', async (req,res)=>{
+    
+
+    try {
+        let item = req.body
+
+        let mail = item.email
+        let pass = item.password
+
+        console.log(item, mail,pass);
+
+        const datas = await signupData.find({email:mail})
+        if(datas == '' && mail !='' && pass != ''){
+            console.log(datas);
+        }
+        else{
+            console.log("1");
+        }
+        // else if(item== null ) throw ('no data')
+
+        // const data = new signupData(item)
+        // await data.save()
+        
+        // res.json({ message: 'Data saved successfully' }).status(201)
+        
+    } catch (error) {
+        console.log(error)
+        res.json({ message: error }).status(400)
+        
+    }
 })
 
 // get all signup details : admin use only

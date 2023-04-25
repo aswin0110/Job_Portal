@@ -12,7 +12,7 @@ export class SignupService {
   constructor(private http:HttpClient) { }
 
   // signup
-  signup(data:any){
-    return this.http.post(`${this.apiUrl}/signup`,{data})
+  signupaccount(data:any){
+    return this.http.post(`${this.apiUrl}/signup`,data)
   }
 }
