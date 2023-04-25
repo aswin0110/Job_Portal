@@ -28,31 +28,58 @@ export class SignupComponent implements OnInit{
     
   }
 
-  signupform(data:any){
+  // signupform(data:any){
+  //   console.log("frontend ", data.value);
+
+  //   this.signup.signup(data.value).subscribe(res =>{
+  //     console.log(res);
+
+  //     if(this.signupstatus.status == '1'){
+  //       console.log("signup successfull");
+  //       this.router.navigateByUrl('studentProfileCreate')
+        
+  //     }
+  //     else if(this.signupstatus.status =='2'){
+  //       this.msg = 'Enter Required details'
+  //     }
+  //     else if(this.signupstatus.status =='0'){
+  //       this.msg = 'Enter Required details'
+  //     }
+  //     else{
+  //       console.log("signup failed");
+  //       this.msg = 'Email ID alredy exists'
+        
+  //     }
+      
+  //   })
+    
+  // }
+  signupform(data: any) {
     console.log("frontend ", data.value);
-
-    this.signup.signup(data.value).subscribe(res =>{
+  
+    this.signup.signup(data.value).subscribe(res => {
       console.log(res);
-
-      if(this.signupstatus.status == '1'){
+  
+      // Assign response value to this.signupstatus
+      this.signupstatus = res;
+  
+      if (this.signupstatus.status == '1') {
         console.log("signup successfull");
         this.router.navigateByUrl('studentProfileCreate')
-        
-      }
-      else if(this.signupstatus.status =='2'){
+  
+      } else if (this.signupstatus.status == '2') {
         this.msg = 'Enter Required details'
-      }
-      else if(this.signupstatus.status =='0'){
+      } else if (this.signupstatus.status == '0') {
         this.msg = 'Enter Required details'
-      }
-      else{
+      } else {
         console.log("signup failed");
-        this.msg = 'Email ID alredy exists'
-        
+        this.msg = 'Email ID already exists'
+  
       }
-      
+  
     })
-    
+  
   }
+  
 
 }
