@@ -4,49 +4,7 @@ const router = express.Router()
 
 const signupData = require('../model/signupModel')
 
-
 // signup
-router.post('/',  async (req,res) =>{
-    
-
-    try {
-
-        let data = req.body
-        let name = data.email
-        let mail = data.email
-        let pass = data.password
-
-        // console.log(data, mail, pass);
-
-        let list =await signupData.find({email:mail})
-        
-        if(list=='' && mail !=''&& pass !=''){
-            console.log('1');
-            const newUser = new signupData(data)  // checking incoming data with schema
-            const savedUser = await newUser.save()
-            // console.log(savedUser);
-            res.json({status:'1'})
-            // res.json({status:'success account created'})
-        }
-        else if(mail == '' || pass == '' || name == ''){
-            console.log('Please enter name, email and password');
-            res.json({status:'2'})
-            // res.json({status:'Please enter name, email and password'})
-
-        }
-        else{
-            res.json({status:'mail id alredy exist please try with new one'})
-            console.log("mail id alredy exist please try with new one");
-        }
-
-        
-    } catch (error) {
-        console.log(error.message);
-        
-    }
-    
-
-})
 
 router.post('/signup', async (req,res)=>{
     
@@ -62,16 +20,19 @@ router.post('/signup', async (req,res)=>{
         const datas = await signupData.find({email:mail})
         if(datas == '' && mail !='' && pass != ''){
             console.log(datas);
+            const data = new signupData(item)
+            await data.save()
+            res.json({status:'1'})
+            console.log('data saved to DB');
+        }
+        else if(mail =='' || pass == ''){
+            console.log('enter data');
+            res.json({status:'2'})
         }
         else{
-            console.log("1");
+            console.log("data alredy exist");
+            res.json({status:'data alredy exist'})
         }
-        // else if(item== null ) throw ('no data')
-
-        // const data = new signupData(item)
-        // await data.save()
-        
-        // res.json({ message: 'Data saved successfully' }).status(201)
         
     } catch (error) {
         console.log(error)

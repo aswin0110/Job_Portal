@@ -38,6 +38,24 @@ export class SignupComponent implements OnInit{
     // console.log(this.data.value);
     this.api.signupaccount(this.data.value).subscribe(res=>{
       console.log(res);
+
+      this.signupstatus = res
+
+      if (this.signupstatus.status =='1'){
+        alert('signup successfully')
+        this.router.navigateByUrl('studentProfileCreate')       
+      }
+      else if(this.signupstatus.status == '2'){
+        this.msg = 'Enter Required details'
+
+      }
+      else{
+        console.log("signup failed");
+        this.msg = 'Email ID alredy exists'
+
+      }
+
+      
       
     })
 
