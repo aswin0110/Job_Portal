@@ -15,4 +15,6 @@ export class SignupService {
   signupaccount(data:any){
     return this.http.post(`${this.apiUrl}/signup`,data)
   }
+
+  
 }

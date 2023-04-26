@@ -16,4 +16,14 @@ export class EmployeracService {
   employersignup(data:any){
     return this.http.post(`${this.apiUrl}/employersignup`,data)
   }
+  // employer count
+  employercount(){
+    return this.http.get(`${this.apiUrl}/data/countemployee`)
+  }
+
+  // alumni count
+  alumnicount(){
+    return this.http.get(`${this.apiUrl}/data/countalumni`)
+  }
+
 }

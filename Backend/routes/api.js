@@ -41,6 +41,7 @@ router.post('/signup', async (req,res)=>{
         
     }
 })
+
 // get all signup details : admin use only
 router.get('/admin/signupdetails', async (req,res)=>{
     let data = await signupData.find()
@@ -64,6 +65,55 @@ router.get('/admin/employerdetails', async (req,res)=>{
     let data = await EmployerSignupModel.find()
     res.json(data)
 })
+
+
+// for admin dashboard: get total employee acounts count
+router.get('/data/countemployee', async (req, res) => {
+    try {
+      const count = await EmployerSignupModel.countDocuments();
+      res.send({ count });
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Server Error');
+    }
+  });
+
+// for admin dashboard: get total alumni acounts count
+router.get('/data/countalumni', async (req, res) => {
+    try {
+      const count = await signupData.countDocuments();
+      res.send({ count });
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Server Error');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
