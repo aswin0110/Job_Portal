@@ -30,6 +30,9 @@ import { ManageaccountComponent } from './components/employee/manageaccount/mana
 import { EmployeracComponent } from './components/admin/employerac/employerac.component';
 import { JobpostformComponent } from './components/employee/jobpostform/jobpostform.component';
 import { EmployeefrontComponent } from './components/employee/employeefront/employeefront.component';
+import { ToastrModule } from 'ngx-toastr';
+
+
 
 @NgModule({
   declarations: [
@@ -65,7 +68,8 @@ import { EmployeefrontComponent } from './components/employee/employeefront/empl
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
     
   ],
   providers: [],
