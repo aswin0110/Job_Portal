@@ -7,7 +7,8 @@ const SignupSchema = new Schema({
         default: 'alumni'
     },
     name:{
-        type:String
+        type:String,
+        require: true
     },
     email:{
         type:String,
