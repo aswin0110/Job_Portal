@@ -50,11 +50,11 @@ router.get('/admin/signupdetails', async (req,res)=>{
 
 // employer signup account through admin
 
-router.post('/employer/signup', (req,res)=>{
+router.post('/employersignup', (req,res)=>{
     // let data = req.body
     let data = new  EmployerSignupModel(req.body)
     data.save()
-    res.json({status:'success'})
+    res.json({status:'1'})
 
 
 })
