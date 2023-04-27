@@ -13,14 +13,14 @@
                 <span>Have an account?</span>
                 <header>Login</header>
             </div>
-    
+    <form [formGroup]="loginform" (ngSubmit)="proceedlogin()">
             <div class="input-field">
-                <input type="text" class="input" placeholder="email" required>
+                <input type="text" class="input" formControlName="email" placeholder="email" required>
                 <i class="bi bi-person"></i>
             </div>
     
             <div class="input-field">
-                <input type="password" class="input" placeholder="password" required>
+                <input type="password" class="input" formControlName="password" placeholder="password" required>
                 <i class="bi bi-lock"></i>
             
             </div>
@@ -38,6 +38,7 @@
                     <label><a href="#"> Forgot password? </a></label>
                 </div>
             </div>
+        </form>
         </div>
     </div>
 </div>

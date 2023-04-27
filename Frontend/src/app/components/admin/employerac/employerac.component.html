@@ -1,33 +1,33 @@
 <div class="card">
     <div class="container">
-        <form class="text-light">
+        <form class="text-light" [formGroup]="data" (ngSubmit)="signupemployer()">
             <div class="mb-1 ">
               <label for="exampleInputEmail1" class="form-label">Company Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" formControlName="companyname" required >
+            </div>
+            <div class="mb-1 ">
+              <label for="exampleInputEmail1" class="form-label">Company Logo Link</label>
+              <input type="email" class="form-control" formControlName="link" >
             </div>
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">HR Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control"formControlName="hrname" required>
             </div>
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control"formControlName="address" required>
             </div>
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Location</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" formControlName="location" required>
             </div>
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" formControlName="email" required>
             </div>
             <div class="mb-1">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-1">
-              <label for="exampleInputPassword1" class="form-label">re-enter password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" class="form-control" formControlName="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

@@ -11,6 +11,21 @@ app.use(logger('dev'))
 
 PORT = 3000
 
+//  mongoose 
+require('./middlewares/mongoDB')
+
+const signupData = require('./model/signupModel')
+
+
+// api
+const api = require('./routes/api')
+app.use('/api', api)
+
+
+
+
+
+
 
 
 
