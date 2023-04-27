@@ -27,13 +27,13 @@
     flex-direction: column;
     padding: 0 15px 0 15px;
 }
-span{
+/* span{
     color: #fff;
     font-size: small;
     display: flex;
     justify-content: center;
     padding: 10px 0 10px 0;
-}
+} */
 
 header{
     color: #fff;
@@ -43,10 +43,10 @@ header{
     padding: 10px 0 10px ;
 }
 
-.input-field{
+/* .input-field{
     display: flex;
     flex-direction: column;
-}
+} */
 .input{
     height: 35px;
     width: 100%;
@@ -58,7 +58,7 @@ header{
     background: rgba(225,225,225,0.4);
 }
 
-i{
+span{
     position: relative;
     top: -28px;
     left: 17px;
@@ -80,6 +80,10 @@ button{
     color: white;
     cursor: pointer;
     transition: .3s;
+    
+}
+button{
+    width: 100%;
 }
 
 button:hover{

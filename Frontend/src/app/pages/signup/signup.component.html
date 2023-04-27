@@ -12,17 +12,21 @@
 
                 <div class="input-field">
                     <input type="text" class="input" placeholder="Name" required formControlName="name">
-                    <i class="bi bi-person"></i>
+                    <span class="bi bi-person"></span>
                 </div>
                 <div class="input-field">
                     <input type="email" class="input" placeholder="email" required formControlName="email">
+<<<<<<< HEAD
+                    <span class="bi bi-telephone"></span>
+=======
                 <i class="bi bi-envelope-at"></i>
                     
+>>>>>>> f3b5c642f6e58d1fa98cf7a3c263c78786f67428
                     <small *ngIf="data.get('email').touched && data.get('email').errors">Enter valid email</small>
                 </div>
                 <div class="input-field">
                     <input type="password" class="input" placeholder="password" required formControlName="password">
-                    <i class="bi bi-lock"></i>
+                    <span class="bi bi-lock"></span>
                     <small *ngIf="data.get('password').touched && data.get('password').errors">Password required(minimum 6 characters)</small><br>
                       <span>{{msg}}</span>
                 
