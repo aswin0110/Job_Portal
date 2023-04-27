@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
+const alumniProfileRoute = require('./routes/aluminiProfileDetails');
+
 
 const app = new express();
 
@@ -22,7 +24,7 @@ const api = require('./routes/api')
 app.use('/api', api)
 
 
-
+app.use('/alumni', alumniProfileRoute);
 
 
 

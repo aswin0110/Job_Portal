@@ -8,10 +8,17 @@ const AluminiModel = require('../model/alumniModel')
 
 router.post("/addAluminiProfileDetails", (req, res) => {
     let AluminiProflieDetails = {
-      name: req.body.name,
+      role: req.body.role,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
-      password: req.body.password,
-      role: req.body.role
+      phone: req.body.phone,
+      highestQualification:req.body.highestQualification,
+      course:req.body.course,
+      batch:req.body.batch,
+      placementStatus:req.body.placementStatus,
+      companyName:req.body.companyName,
+
     };
     let addAluminiData = AluminiModel(AluminiProflieDetails);
     addAluminiData.save();
@@ -24,4 +31,4 @@ router.post("/addAluminiProfileDetails", (req, res) => {
 
 
 
-module.exports = router
+module.exports = router;

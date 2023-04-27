@@ -6,3 +6,4 @@ mongoose.connect('mongodb+srv://aswinkannur1:Aswinkannur01@cluster0.amfjccq.mong
 .catch((error)=>{
     console.log(error.message)
 }) 
+
