@@ -5,11 +5,17 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class LoginService {
-  apiUrl:String = 'http://localhost:3000/user'
+  apiUrl:String = 'http://localhost:3000/api'
 
   constructor(private http:HttpClient) { }
 
-  login(code:any){
-    return this.http.get(`${this.apiUrl}/login`,code)
+  login(data:any){
+    return this.http.post(`${this.apiUrl}/auth`,data)
+  }
+
+  getToken():boolean{
+    return !!localStorage.getItem('token')
   }
 }
+
+

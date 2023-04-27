@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDialogModule} from '@angular/material/dialog';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,7 +31,9 @@ import { EmployeracComponent } from './components/admin/employerac/employerac.co
 import { JobpostformComponent } from './components/employee/jobpostform/jobpostform.component';
 import { EmployeefrontComponent } from './components/employee/employeefront/employeefront.component';
 import { ToastrModule } from 'ngx-toastr';
-
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { LoginService } from './services/login.service';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -72,7 +74,12 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot()
     
   ],
-  providers: [],
+  providers: [LoginService,AuthGuard,
+    {
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

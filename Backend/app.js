@@ -14,7 +14,7 @@ PORT = 3000
 //  mongoose 
 require('./middlewares/mongoDB')
 
-const signupData = require('./model/signupModel')
+// const signupData = require('./model/signupModel')
 
 
 // api
