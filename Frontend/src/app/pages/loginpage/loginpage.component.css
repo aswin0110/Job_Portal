@@ -57,6 +57,9 @@ header{
     background: rgba(225,225,225,0.4);
 }
 
+.form-control{
+    padding-left: 43px;
+}
 i{
     position: relative;
     top: -28px;

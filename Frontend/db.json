@@ -1,8 +1,11 @@
 {
     "user":[
 {
-    "email":"aparnaraji2000@gmail.com",
-    "password":"apar123"
+    "_id": "6448b6a6a2ac105b6ecd827c",
+        "role": "alumni",
+        "name": "Amal",
+        "email": "amal@gmail.com",
+        "password": "123456789"
 }
     ]
 }

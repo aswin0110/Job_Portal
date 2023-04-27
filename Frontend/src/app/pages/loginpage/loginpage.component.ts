@@ -12,23 +12,35 @@ export class LoginpageComponent {
 constructor(private builder:FormBuilder, private toastr:ToastrService,
   private router:Router,private service:LoginService){}
 
-  userdata:any;
-loginform = this.builder.group({
-  email:this.builder.control('',Validators.required),
-  password:this.builder.control('',Validators.required)
-})
+  Login=new FormGroup({
+    email:new FormControl('',[Validators.email,Validators.required]),
+    password:new FormControl('',[Validators.required,Validators.minLength(8)])
+  })
 
-proceedlogin(){
-  if(this.loginform.valid){
-    this.service.login(this.loginform.value.email).subscribe(res=>{
-this.userdata=res;
-console.log(this.userdata)
-if(this.userdata.password===this.loginform.value.password){
+  login() {
 
-}else{
-  this.toastr.error('invalid credential')
-}
+    let value = this.Login.value
+    this.service.login(value).subscribe((res:any)=>{
+      console.log(res)
+      if(res.status === 200){
+        if(res.token ){
+          localStorage.setItem('token',res.token)
+          this.router.navigate([''])
+        }
+      }
+      else{
+        // alert("access denied")
+        this.toastr.error("access denied")
+      }
+    
+  
     })
+  
   }
-}
+  
+   
+  get loggedin():any{
+    return this.Login.controls;
+  }
+
 }
