@@ -17,11 +17,15 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
     password:new FormControl('',[Validators.required,Validators.minLength(8)])
   })
 
+
+
+
   login() {
 
     let value = this.Login.value
     this.service.login(value).subscribe((res:any)=>{
       console.log(res)
+
       if(res.status === 200){
         if(res.token ){
           localStorage.setItem('token',res.token)
@@ -42,5 +46,7 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
   get loggedin():any{
     return this.Login.controls;
   }
+
+  
 
 }

@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit{
 
   signupstatus:any
   msg:any
+  
 
   constructor(private router:Router,private fb: FormBuilder, private api:SignupService){}
 
@@ -32,16 +33,17 @@ export class SignupComponent implements OnInit{
 
   ngOnInit(): void {
     
+    
   }
 
   signupform(){
     // console.log(this.data.value);
     this.api.signupaccount(this.data.value).subscribe(res=>{
-      console.log(res);
+      // console.log(res);
 
       this.signupstatus = res
 
-      if (this.signupstatus.status =='1'){
+      if (this.signupstatus.status =='1' && this.data.name !=''){
         alert('signup successfully')
         this.router.navigateByUrl('studentProfileCreate')       
       }
@@ -49,8 +51,9 @@ export class SignupComponent implements OnInit{
         this.msg = 'Enter Required details'
 
       }
+      
       else{
-        console.log("signup failed");
+        // console.log("signup failed");
         this.msg = 'Email ID alredy exists'
 
       }
@@ -60,59 +63,13 @@ export class SignupComponent implements OnInit{
     })
 
 
-    // console.log("frontend ", data.value);
 
-    // this.signup.signup(data.value).subscribe(res =>{
-    //   console.log(res);
 
-    //   this.signupstatus = res
-
-    //   if(this.signupstatus.status == '1'){
-    //     console.log("signup successfull");
-    //     this.router.navigateByUrl('studentProfileCreate')
-        
-    //   }
-    //   else if(this.signupstatus.status =='2'){
-    //     this.msg = 'Enter Required details'
-    //   }
-    //   else if(this.signupstatus.status =='0'){
-    //     this.msg = 'Enter Required details'
-    //   }
-    //   else{
-    //     console.log("signup failed");
-    //     this.msg = 'Email ID alredy exists'
-        
-    //   }
-      
-    // })
     
   }
 
 
-  // signupform(data: any) {
-  //   console.log("frontend ", data.value);
-  
-  //   this.signup.signup(data.value).subscribe(res => {
-  //     console.log("hai",res);
-  
-  //     this.signupstatus = res;
-  
-  //     if (this.signupstatus.status == '1') {
-  //       console.log("signup successfull");
-  //       this.router.navigateByUrl('studentProfileCreate')
-  
-  //     } else if (this.signupstatus.status == '2') {
-  //       this.msg = 'Enter Required details'
-      
-  //     } else {
-  //       console.log("signup failed");
-  //       this.msg = 'Email ID already exists'
-  
-  //     }
-  
-  //   })
-  
-  // }
+
   
 
 }

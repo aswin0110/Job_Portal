@@ -23,10 +23,10 @@ router.post('/', async (req,res)=>{
             const data = new signupData(item)
             await data.save()
             res.json({status:'1'})
-            console.log('data saved to DB');
+            console.log('one singup data added to DB');
         }
         else if(mail =='' || pass == ''){
-            console.log('please enter data');
+            console.log('Signup data is blank');
             res.json({status:'2'})
         }
         else{
