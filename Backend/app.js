@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
+const passport = require("passport");
+
 const alumniProfileRoute = require('./routes/aluminiProfileDetails');
 
 
@@ -11,10 +13,11 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(logger('dev'))
 
-PORT = 3000
+const PORT = 3000
 
 //  mongoose 
 require('./middlewares/mongoDB')
+require("./middlewares/passport")(passport);
 
 // const signupData = require('./model/signupModel')
 

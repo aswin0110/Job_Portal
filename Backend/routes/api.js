@@ -16,6 +16,7 @@ router.use('/countalumni', require('./countalumniac'))
 router.use('/auth', require('./login'))
 
 
+router.use("/users", require("./users"));
 
 
 
