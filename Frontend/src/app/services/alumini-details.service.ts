@@ -12,7 +12,7 @@ export class AluminiDetailsService {
 // Add alimini profile details
 addAlumniProfileDetails(alumniData: any) {
   return this.http.post<any>(
-    'http://localhost:3000/api/alumnisignup',
+    'http://localhost:3000/alumni/addAlumniProfileDetails',
     alumniData
   );
 }

@@ -6,28 +6,28 @@ const router = express.Router()
 const AlumniModel = require('../model/alumniModel')
 
 // Alumini profile creating post operation
-// router.post("/addAlumniProfileDetails", (req, res) => {
-//     let AlumniProflieDetails = {
-//       role: req.body.role,
-//       firstname: req.body.firstname,
-//       lastname: req.body.lastname,
-//       email: req.body.email,
-//       phone: req.body.phone,
-//       highestQualification:req.body.highestQualification,
-//       course:req.body.course,
-//       batch:req.body.batch,
-//       placementStatus:req.body.placementStatus,
-//       companyName:req.body.companyName,
-//       password:req.body.password,
+router.post("/addAlumniProfileDetails", (req, res) => {
+    let AlumniProflieDetails = {
+      role: req.body.role,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      phone: req.body.phone,
+      highestQualification:req.body.highestQualification,
+      course:req.body.course,
+      batch:req.body.batch,
+      placementStatus:req.body.placementStatus,
+      companyName:req.body.companyName,
+      password:req.body.password,
 
-//     };
-//     let addAlumniData = AlumniModel(AlumniProflieDetails);
-//     addAlumniData.save();
+    };
+    let addAlumniData = AlumniModel(AlumniProflieDetails);
+    addAlumniData.save();
   
-//     AlumniModel.find().then((addAlumniData) => {
-//       res.send(addAlumniData);
-//     });
-//   });
+    AlumniModel.find().then((addAlumniData) => {
+      res.send(addAlumniData);
+    });
+  });
 
 
 // Alumini Profiles get and update

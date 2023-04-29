@@ -4,6 +4,7 @@ const logger = require('morgan')
 const passport = require("passport");
 
 const alumniProfileRoute = require('./routes/aluminiProfileDetails');
+const JobCareerRoute = require('./routes/jobform')
 
 
 const app = new express();
@@ -28,6 +29,8 @@ app.use('/api', api)
 
 
 app.use('/alumni', alumniProfileRoute);
+
+app.use('/career', JobCareerRoute );
 
 
 const alumni = require('./model/signupModel')

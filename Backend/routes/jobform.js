@@ -51,6 +51,72 @@ router.post('/', async (req,res)=>{
     
 //   }
 
+// career get request main page
 
+// Read All job detsils
+router.get("/JobDetails", (req, res) => {
+    jobpost.find().then((jobData) => {
+      res.send(jobData);
+    });
+  });
+
+
+
+
+router.get("/jobDetails/:id", (req, res) => {
+    const id = req.params.id;
+    jobpost.findOne({ _id: id }).then((alumni) => {
+      res.send(alumni);
+    }); 
+  });
+
+  // Update Alumini Profiles details
+  router.put("/singleJobDetails", (req, res) => {
+    var id = req.params.id;
+    var Company_Logo = req.params.Company_Logo;
+    var Company_Name = req.params.Company_Name;
+    var Job_Title = req.params.Job_Title;
+    var Job_locaion = req.params.Job_locaion;
+    var start_Date = req.params.start_Date;
+    var Salary = req.params.Salary;
+    var Employment_Type = req.params.Employment_Type;
+    var description = req.params.description;
+  
+  
+  
+    console.log(req.body);
+    (id = req.body._id),
+      (Company_Logo = req.body.firstname),
+      (lastname = req.body.lastname),
+      (email = req.body.email),
+      (phone = req.body.phone),
+      (highestQualification = req.body.highestQualification),
+      (course = req.body.course),
+      (batch = req.body.batch),
+      (placementStatus = req.body.placementStatus),
+      (companyName = req.body.companyName),
+  
+      jobpost
+        .findByIdAndUpdate(
+          { _id: id },
+          {
+            $set: {
+                firstname: req.body.firstname,
+                lastname: req.body.lastname,
+                email: req.body.email,
+                phone: req.body.phone,
+                highestQualification:req.body.highestQualification,
+                course:req.body.course,
+                batch:req.body.batch,
+                placementStatus:req.body.placementStatus,
+                companyName:req.body.companyName,
+            },
+          }
+        )
+        .then(() => {
+          res.send();
+        });
+  });
+  
 
   module.exports = router
