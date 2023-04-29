@@ -23,7 +23,7 @@ export class AnalyticsComponent {
 
   getemplcount(){
     this.api.employercount().subscribe((res:any)=>{
-      console.log(res);
+      // console.log(res);
       this.emplocount = res
 
       
@@ -32,7 +32,7 @@ export class AnalyticsComponent {
 
   getalucount(){
     this.api.alumnicount().subscribe((res:any)=>{
-      console.log(res);
+      // console.log(res);
       this.alumncount = res
       
     })

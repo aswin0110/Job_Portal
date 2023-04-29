@@ -15,9 +15,14 @@ router.use('/countalumni', require('./countalumniac'))
 
 router.use('/auth', require('./login'))
 
-
+// login
 router.use("/users", require("./users"));
 
+// get profile for admin dashboard
+router.use('/data/alumni', require('./admindashboard'))
+
+// jobpostform
+router.use('/jobpost', require('./jobform'))
 
 
 module.exports = router
