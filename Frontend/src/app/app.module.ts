@@ -34,9 +34,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './auth.guard';
+import { MaterialModule } from 'material.module';
 import { AlumniManageAccountComponent } from './components/alumni-manage-account/alumni-manage-account.component';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +72,9 @@ import { AlumniManageAccountComponent } from './components/alumni-manage-account
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MaterialModule
+    
     
   ],
   providers: [LoginService,AuthGuard,

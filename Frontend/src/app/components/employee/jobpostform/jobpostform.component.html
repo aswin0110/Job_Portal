@@ -1,28 +1,79 @@
-<div class="card">
+<!-- <div class="card">
     <div class="container">
         <form class="text-light" >
             <div class="mb-1 ">
               <label for="exampleInputEmail1" class="form-label">Company Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Job Title</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Location</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="mb-1">
-              <label for="exampleInputEmail1" class="form-label">Salary</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-1">
-              <label for="exampleInputEmail1" class="form-label">Employment Type</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-           
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-    </div>
-</div>
+            -->
+
+<form >
+
+  <mat-form-field class="box logo" appearance="fill">
+    <mat-label>Company Logo</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field class="box" appearance="fill">
+    <mat-label>Company Name</mat-label>
+    <input matInput>
+  </mat-form-field>
+  
+  <mat-form-field class="box" appearance="fill">
+    <mat-label>Job Title</mat-label>
+    <input matInput>
+  </mat-form-field>
+  
+  <mat-form-field class="box" appearance="fill">
+    <mat-label>Job Location</mat-label>
+    <input matInput>
+  </mat-form-field>
+  
+  <mat-form-field class=" box example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field class="box" appearance="fill">
+    <mat-label>Salary</mat-label>
+    <mat-select>
+      <mat-option value="one">5k - 10k</mat-option>
+      <mat-option value="two">10k - 20k</mat-option>
+      <mat-option value="two">30k - 40k</mat-option>
+      <mat-option value="two">50k - 60k</mat-option>
+      <mat-option value="two">60k - 70k</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="box" appearance="fill">
+    <mat-label>Job skills</mat-label>
+    <input matInput>
+  </mat-form-field>
+  
+ 
+  <mat-form-field class="box text" appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput #input maxlength="30" placeholder="Description"></textarea>
+    <mat-hint align="end">{{input.value.length}}/30</mat-hint>
+  </mat-form-field>
+
+
+  <section>
+    <div class="example-button-row">
+      <button mat-raised-button color="accent">Accent</button>
+       </div>
+  </section>
+  
+</form>
