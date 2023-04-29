@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 
-const signupData = require('../model/signupModel')
+const alumniSignupData = require('../model/alumniModel')
 
-// signup
+// alumini signup
 
 router.post('/', async (req,res)=>{
     
@@ -17,10 +17,10 @@ router.post('/', async (req,res)=>{
 
         console.log(item, mail,pass);
 
-        const datas = await signupData.find({email:mail})
+        const datas = await alumniSignupData.find({email:mail})
         if(datas == '' && mail !='' && pass != ''){
             console.log(datas);
-            const data = new signupData(item)
+            const data = new alumniSignupData(item)
             await data.save()
             res.json({status:'1'})
             console.log('one singup data added to DB');
@@ -42,7 +42,7 @@ router.post('/', async (req,res)=>{
 })
 // get all signup details : admin use only
 router.get('/admin/signupdetails', async (req,res)=>{
-    let data = await signupData.find()
+    let data = await alumniSignupData.find()
     res.json(data)
 })
 

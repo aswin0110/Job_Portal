@@ -10,28 +10,28 @@
 
       <div class="mb-3">
         <label class="form-label">Last Name</label>
-        <input type="text" name="firstname" [(ngModel)]="AluminiProfileDetail.lastname" class="form-control">
+        <input type="text" name="lastname" [(ngModel)]="AluminiProfileDetail.lastname" class="form-control">
       </div>
       
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" name="firstname" [(ngModel)]="AluminiProfileDetail.email" class="form-control" id="exampleFormControlInput1" placeholder="example@gmail.com">
+        <input type="email" name="email" [(ngModel)]="AluminiProfileDetail.email" class="form-control" id="exampleFormControlInput1" placeholder="example@gmail.com">
       </div>
 
   <div class="mb-3">
     <label class="form-label">Phone</label>
-    <input type="tel" name="firstname" [(ngModel)]="AluminiProfileDetail.phone" class="form-control">
+    <input type="tel" name="phone" [(ngModel)]="AluminiProfileDetail.phone" class="form-control">
   </div>
 
 
   <div class="mb-3">
     <label class="form-label">Highest Qualification</label>
-    <input type="text" name="firstname" [(ngModel)]="AluminiProfileDetail.highestQualification" class="form-control">
+    <input type="text" name="highestQualification" [(ngModel)]="AluminiProfileDetail.highestQualification" class="form-control">
   </div>
 
   <div class="mb-3">
     <label class="form-label">Course studied at ICTAK</label>
-    <select class="form-select" name="firstname" [(ngModel)]="AluminiProfileDetail.course" aria-label="Default select example">
+    <select class="form-select" name="course" [(ngModel)]="AluminiProfileDetail.course" aria-label="Default select example">
         <option selected disabled>Select course</option>
         <option value="FSD">FSD</option>
         <option value="DSA">DSA</option>
@@ -44,7 +44,7 @@
 
   <div class="mb-3">
     <label class="form-label">Batch Details</label>
-    <select class="form-select" name="firstname" [(ngModel)]="AluminiProfileDetail.batch" aria-label="Default select example">
+    <select class="form-select" name="batch" [(ngModel)]="AluminiProfileDetail.batch" aria-label="Default select example">
       <option selected disabled>Select Batch</option>
         <option value="KKEM">KKEM</option>
         <option value="NORKA">NORKA</option>
@@ -54,7 +54,7 @@
 
   <div class="mb-3">
     <label class="form-label">Placement Status</label>
-    <select class="form-select" name="firstname" [(ngModel)]="AluminiProfileDetail.placementStatus" aria-label="Default select example">
+    <select class="form-select" name="placementStatus" [(ngModel)]="AluminiProfileDetail.placementStatus" aria-label="Default select example">
       <option selected disabled>Select</option>
         <option value="Placed">Placed</option>
         <option value="Job-Seeking">Job-Seeking</option>
@@ -63,7 +63,7 @@
 
   <div class="mb-3">
     <label class="form-label">Company Name</label>
-    <input type="text" name="firstname" [(ngModel)]="AluminiProfileDetail.companyName" class="form-control">
+    <input type="text" name="companyName" [(ngModel)]="AluminiProfileDetail.companyName" class="form-control">
   </div>
 
   <button class="btn btn-primary click" (click)="addAluminiProfileDetails()">Submit</button>

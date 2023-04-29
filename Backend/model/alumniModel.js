@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const AluminiSchema = new Schema({
     role: {
         type:String,
-        default: 'alumini'
+        default: 'alumni'
     },
     firstname:{
         type:String,
@@ -41,7 +41,11 @@ const AluminiSchema = new Schema({
     companyName:{
         type: String,
         require: true
-    }
+    },
+    password:{
+        type: String,
+        require: true
+    },
 
 })
 

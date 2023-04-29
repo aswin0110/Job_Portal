@@ -34,6 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './auth.guard';
+import { AlumniManageAccountComponent } from './components/alumni-manage-account/alumni-manage-account.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { AuthGuard } from './auth.guard';
     ManageaccountComponent,
     EmployeracComponent,
     JobpostformComponent,
-    EmployeefrontComponent
+    EmployeefrontComponent,
+    AlumniManageAccountComponent
   ],
   imports: [
     BrowserModule,

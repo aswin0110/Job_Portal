@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,26 @@ export class AluminiDetailsService {
 
   constructor(private http:HttpClient) { }
 
-// Add trainer head auth data
-addAluminiProfileDetails(aluminiData: any) {
+// Add alimini profile details
+addAlumniProfileDetails(alumniData: any) {
   return this.http.post<any>(
-    'http://localhost:3000/alumni/addAluminiProfileDetails',
-    aluminiData
+    'http://localhost:3000/api/alumnisignup',
+    alumniData
   );
+}
+
+// get alumini details to update by ID 
+getAlumniProfileDetails(id:any) {
+  return this.http.get('http://localhost:3000/alumni/alumniDetails/' + id);
+}
+// update Alumini Details
+updateAlumniDetails(alumni: any) {
+  console.log('update profile Details');
+  return this.http
+    .put('http://localhost:3000/alumni/alumniProfileUpdate/', alumni)
+    .subscribe((data) => {
+      console.log(data);
+    });
 }
 
 }
