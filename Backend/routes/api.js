@@ -18,6 +18,9 @@ router.use('/auth', require('./login'))
 
 router.use("/users", require("./users"));
 
+// get profile for admin dashboard
+router.use('/data/alumni', require('./admindashboard'))
+
 
 
 module.exports = router
