@@ -16,14 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr *ngIf="emplocount">
                     <td>Employee</td>
-                    <td>12</td>
-                    <td></td>
+                    <td>{{emplocount.count}}</td>
                   </tr>
-                <tr>
+                <tr *ngIf ="alumncount">
                     <td>Alumni</td>
-                    <td>42</td>
+                    <td>{{alumncount.count}}</td>
                   </tr>
 
 

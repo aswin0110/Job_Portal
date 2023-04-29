@@ -52,7 +52,7 @@
           <div class="cards">
             <!-- card header  -->
             <div class="card-header ">
-                <h4 class="mb-0">List By Role</h4>
+                <h4 class="mb-0">List Of Company</h4>
             </div>
             <!-- table  -->
             <div class="card-body">
@@ -60,16 +60,16 @@
                 <table class="table text-nowrap mb-0 table-centered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th class="selectbtn">
+                            <!-- <th class="selectbtn">
 
                               <select class="form-select" aria-label="Default select example">
                                 <option selected>Select The Role</option>
-                                <option value="1">All Account</option>
                                 <option value="2">Employee</option>
                                 <option value="3">Alumni</option>
                               </select>
 
-                            </th>
+                            </th> -->
+                            <th>Alumni Name</th>
                             <th>Email Address</th>
                             <th>Qualification</th>
                             <th>Course</th>
@@ -78,19 +78,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Amal</td>
-                        <td>amal521@gmail.com</td>
-                        <td>Degree</td>
-                        <td>FSD</td>
-                        <td>Job Seeking</td>
+                    <tr *ngFor="let item of accounts">
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.name}}</td>
+                        
                         <td class="text-danger deletebtn">
                           <div class="testing">
                             <span class="bi bi-trash3"></span> Delete
                           </div>
                         </td>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>Akhil</td>
                         <td>amal521@gmail.com</td>
                         <td>Degree</td>
@@ -161,7 +162,7 @@
                             <span class="bi bi-trash3"></span> Delete
                           </div>
                         </td>
-                      </tr>
+                      </tr> -->
 
 
 

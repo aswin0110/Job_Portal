@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const loginData = require('../model/loginModel')
+// const loginData = require('../model/loginModel')
 
 const jwt = require('jsonwebtoken')
 router.post('/' ,async (req,res)=>{

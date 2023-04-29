@@ -9,14 +9,22 @@ import { TokenInterceptorService } from 'src/app/services/token-interceptor.serv
 export class NavbarComponent {
 
   isElementHidden = false;
-   login = '';
+   login = 'j';
   constructor(private apitoken:TokenInterceptorService){}
 
   hideElement() {
 
     
     // this.isElementHidden = false;x
-    this.apitoken.removeToken() 
+    // let token =localStorage.getItem('token');
+    // this.apitoken.removeToken() 
+    // console.log(token);
+
+    // when clicking logout button jwt token will delete and button should be hidden
+    
+    this.login = '' 
+
+    
     
   }
 
