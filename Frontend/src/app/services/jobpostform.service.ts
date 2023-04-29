@@ -8,7 +8,7 @@ export class JobpostformService {
 
   constructor(private http:HttpClient) { }
 
-  addjob(data:any){
-    return this.http.post(`${this.api}/book` , data)
-  }
+  // addjob(data:any){
+  //   return this.http.post(`${this.api}/book` , data)
+  // }
 }

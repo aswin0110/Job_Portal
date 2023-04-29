@@ -21,12 +21,13 @@ export class JobpostformComponent {
   
   constructor( private apiservice:JobpostformService ) {}
 
-  onSubmit(){
-    // console.log(this.bookform.value)
-    this.apiservice.addjob(this.jobform.value).subscribe(res=>{
+  // onSubmit(){
+  //   // console.log(this.bookform.value)
+  //   this.apiservice.addjob(this.jobform.value).subscribe(res=>{
     
-      console.log(res)
-      alert("Book added successfully")
-    })
-  }
+  //     console.log(res)
+  //     alert("Book added successfully")
+  //   })
+//   }
+// [formGroup]="jobform" (ngSubmit)="onSubmit()"
 }

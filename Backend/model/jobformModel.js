@@ -3,6 +3,10 @@ const Schema = Mongoose.Schema
 
 
 const JobSchema = new Schema ({
+    Company_Logo:{
+        type:String,
+        required:true
+    },
     Company_Name:{
         type:String,
         required:true
@@ -11,17 +15,27 @@ const JobSchema = new Schema ({
         type:String,
         required:true
     },
-    Location:{
+    Job_locaion:{
+        type:String,
+        required:true
+    },
+    start_Date:{
         type:String,
         required:true
     },
     Salary:{
-        type:String,
+        type:Number,
         required:true
+    
     },
     Employment_Type:{
         type:String,
         required:true
+    },
+    description:{
+        type:String,
+        required:true
+
     }
 })
     
