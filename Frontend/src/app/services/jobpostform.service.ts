@@ -21,4 +21,12 @@ export class JobpostformService {
   getSingleJobDetails(id: any) {
     return this.http.get('http://localhost:3000/career/jobDetails/' + id);
   }
+
+  // Apply for particular job 
+  applyJob(jobAppliedData: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/career/appliedJob',
+      jobAppliedData
+    );
+  }
 }

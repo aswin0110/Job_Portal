@@ -44,7 +44,8 @@ const routes: Routes = [
 {path:'alumni', component:AlumniComponent,
   children:[
     {path:'manageJobPost', component:AlumniManageJobpostComponent},
-    {path:'manageAccount', component:AlumniManageAccountComponent}
+    {path:'manageAccount', component:AlumniManageAccountComponent},
+    
   ]
 },
 {path:'employee',component:EmployeeComponent,

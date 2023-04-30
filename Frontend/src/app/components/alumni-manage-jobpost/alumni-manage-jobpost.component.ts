@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { JobApplicationUpdateComponent } from '../job-application-update/job-application-update.component';
 
 @Component({
   selector: 'app-alumni-manage-jobpost',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AlumniManageJobpostComponent {
 
+
+  constructor(private dialogRef: MatDialog ){}
+
+
+  updateApplication(){
+    this.dialogRef.open(JobApplicationUpdateComponent);
+  }
 }

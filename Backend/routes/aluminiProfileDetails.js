@@ -38,7 +38,8 @@ router.get("/alumniDetails/:id", (req, res) => {
     res.send(alumni);
   }); 
 });
-// Update Alumini Profiles details
+
+// 
 router.put("/alumniProfileUpdate", (req, res) => {
   var id = req.params.id;
   var firstname = req.params.firstname;

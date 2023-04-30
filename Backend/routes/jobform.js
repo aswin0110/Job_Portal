@@ -3,6 +3,8 @@ const router = express.Router()
 
 const jobpost = require('../model/jobformModel')
 
+const jobAppliedModel = require('../model/jobAppliedModel')
+
 // signup
 
 router.post('/', async (req,res)=>{
@@ -62,7 +64,7 @@ router.get("/JobDetails", (req, res) => {
 
 
 
-
+// Get job details of particular id
 router.get("/jobDetails/:id", (req, res) => {
     const id = req.params.id;
     jobpost.findOne({ _id: id }).then((alumni) => {
@@ -70,53 +72,17 @@ router.get("/jobDetails/:id", (req, res) => {
     }); 
   });
 
-  // Update Alumini Profiles details
-  router.put("/singleJobDetails", (req, res) => {
-    var id = req.params.id;
-    var Company_Logo = req.params.Company_Logo;
-    var Company_Name = req.params.Company_Name;
-    var Job_Title = req.params.Job_Title;
-    var Job_locaion = req.params.Job_locaion;
-    var start_Date = req.params.start_Date;
-    var Salary = req.params.Salary;
-    var Employment_Type = req.params.Employment_Type;
-    var description = req.params.description;
+  // add the job applied to collection in cluting job details
+  router.post('/appliedJob', (req,res)=>{
+    // let data = req.body
+    let data = new  jobAppliedModel(req.body)
+    data.save()
+    res.json({status:'1'})
+})
+
   
-  
-  
-    console.log(req.body);
-    (id = req.body._id),
-      (Company_Logo = req.body.firstname),
-      (lastname = req.body.lastname),
-      (email = req.body.email),
-      (phone = req.body.phone),
-      (highestQualification = req.body.highestQualification),
-      (course = req.body.course),
-      (batch = req.body.batch),
-      (placementStatus = req.body.placementStatus),
-      (companyName = req.body.companyName),
-  
-      jobpost
-        .findByIdAndUpdate(
-          { _id: id },
-          {
-            $set: {
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
-                email: req.body.email,
-                phone: req.body.phone,
-                highestQualification:req.body.highestQualification,
-                course:req.body.course,
-                batch:req.body.batch,
-                placementStatus:req.body.placementStatus,
-                companyName:req.body.companyName,
-            },
-          }
-        )
-        .then(() => {
-          res.send();
-        });
-  });
-  
+
+
+
 
   module.exports = router

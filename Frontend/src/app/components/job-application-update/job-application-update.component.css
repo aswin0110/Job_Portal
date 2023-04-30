@@ -1,0 +1,22 @@
+.application{
+    height: 80vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+    overflow-y: scroll;
+    color: #fff;
+}
+.OR{
+    text-align: center;
+    margin: 20px 20px;
+    font-size: 30px;
+    font-weight: 600;
+
+}
+.fill{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 50px;
+    text-align: center;
+}

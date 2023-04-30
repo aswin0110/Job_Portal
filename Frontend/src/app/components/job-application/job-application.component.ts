@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { jobDataModel } from 'src/app/pages/career/jobData.Model';
 import { JobpostformService } from 'src/app/services/jobpostform.service';
 
@@ -17,11 +18,21 @@ export class JobApplicationComponent {
      Salary: '',
      Employment_Type: '',
      description: '',
+     
+     firstname: '',
+     lastname: '',
+     email: '',
+     phone:'',
+     course:'',
+     highestQualification:'',
+     skills:'',
+     percentage:'',
+     uploadResume:'',
+     resumeLink:'',
     
   }
-
   // jobDetails: jobDataModel [] = [];
-  constructor(private jobServices:JobpostformService){}
+  constructor(private jobServices:JobpostformService, private router:Router){}
 
 ngOnInit(): void{
   let jobId = localStorage.getItem('editJobId');
@@ -29,4 +40,18 @@ ngOnInit(): void{
     this.jobDetails = JSON.parse(JSON.stringify(data));
   });
 }
+
+applyJob() {
+  console.log(this.jobDetails);
+  this.jobServices.applyJob(this.jobDetails)
+    .subscribe((res) => {
+      console.log(res);
+      alert('Job applied Sucessfully');
+      this.router.navigate(['/alumni/manageJobPost'])
+    }, err=>{
+      alert("Not able to apply for this job")
+      console.log(err);
+    });
+}
+
 }
