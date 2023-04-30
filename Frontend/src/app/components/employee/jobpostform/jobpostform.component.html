@@ -15,30 +15,30 @@
             </div>
             -->
 
-<form >
+<form [formGroup]="jobform" (ngSubmit)="onSubmit()">
 
   <mat-form-field class="box logo" appearance="fill">
-    <mat-label>Company Logo</mat-label>
+    <mat-label>Company_logo</mat-label>
     <input matInput>
   </mat-form-field>
 
   <mat-form-field class="box" appearance="fill">
-    <mat-label>Company Name</mat-label>
+    <mat-label>Company_Name</mat-label>
     <input matInput>
   </mat-form-field>
   
   <mat-form-field class="box" appearance="fill">
-    <mat-label>Job Title</mat-label>
+    <mat-label>Job_Title</mat-label>
     <input matInput>
   </mat-form-field>
   
   <mat-form-field class="box" appearance="fill">
-    <mat-label>Job Location</mat-label>
+    <mat-label>Job_location</mat-label>
     <input matInput>
   </mat-form-field>
   
   <mat-form-field class=" box example-full-width" appearance="fill">
-    <mat-label>Choose a date</mat-label>
+    <mat-label>start_Date</mat-label>
     <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -58,13 +58,13 @@
   </mat-form-field>
 
   <mat-form-field class="box" appearance="fill">
-    <mat-label>Job skills</mat-label>
+    <mat-label>job_skill</mat-label>
     <input matInput>
   </mat-form-field>
   
  
   <mat-form-field class="box text" appearance="fill">
-    <mat-label>Textarea</mat-label>
+    <mat-label>description</mat-label>
     <textarea matInput #input maxlength="30" placeholder="Description"></textarea>
     <mat-hint align="end">{{input.value.length}}/30</mat-hint>
   </mat-form-field>
@@ -72,7 +72,7 @@
 
   <section>
     <div class="example-button-row">
-      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="accent">Submit</button>
        </div>
   </section>
   

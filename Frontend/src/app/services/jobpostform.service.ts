@@ -29,4 +29,14 @@ export class JobpostformService {
       jobAppliedData
     );
   }
+
+
+// employer job post form
+  addjobpost(data:any){
+    return this.http.post<any>('http://localhost:3000/api/jobpost/',data)
+  }
 }
+
+
+
+

@@ -18,11 +18,14 @@ export class JobpostformComponent {
 
 
   jobform:any = new FormGroup ({
+    Company_logo: new FormControl(''),
     Company_Name: new FormControl(''),
     Job_Title: new FormControl(''),
-    Location: new FormControl(''),
+    Job_location: new FormControl(''),
     Salary: new FormControl(''),
-    Employment_Type: new FormControl('')
+    job_skill: new FormControl(''),
+    start_Date: new FormControl(''),
+    description: new FormControl('')
   
   })
   minDate: Date;
@@ -35,5 +38,13 @@ export class JobpostformComponent {
     this.maxDate = new Date(currentYear + 1, 11, 31);
    }
 
+   onSubmit(){
+     console.log(this.jobform.value)
+    this.apiservice.addjobpost(this.jobform.value).subscribe(res=>{
+    
+      console.log(res)
+      alert("job added successfully")
+    })
+  }
  
 }
