@@ -12,20 +12,20 @@ export class NavbarComponent {
    login = 'j';
   constructor(private apitoken:TokenInterceptorService){}
 
-  hideElement() {
+  // hideElement() {
 
     
-    // this.isElementHidden = false;x
-    // let token =localStorage.getItem('token');
-    // this.apitoken.removeToken() 
-    // console.log(token);
+  //   // this.isElementHidden = false;x
+  //   // let token =localStorage.getItem('token');
+  //   // this.apitoken.removeToken() 
+  //   // console.log(token);
 
-    // when clicking logout button jwt token will delete and button should be hidden
+  //   // when clicking logout button jwt token will delete and button should be hidden
     
-    this.login = '' 
+  //   this.login = '' 
 
     
     
-  }
+  // }
 
 }
