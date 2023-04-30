@@ -8,6 +8,7 @@ export class jobDataModel {
       public Salary: String,
       public Employment_Type: String,
       public description: String,
+      public job_skill: String,
       
     ) {}
   }

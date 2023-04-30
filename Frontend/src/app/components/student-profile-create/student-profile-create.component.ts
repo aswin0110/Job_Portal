@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AluminiDetailsService } from 'src/app/services/alumini-details.service';
 
 @Component({
@@ -8,9 +9,9 @@ import { AluminiDetailsService } from 'src/app/services/alumini-details.service'
 })
 export class StudentProfileCreateComponent {
 
-  constructor(private aluminiServices:AluminiDetailsService){}
+  constructor(private aluminiServices:AluminiDetailsService, private router:Router){}
 
-  AluminiProfileDetail= {
+  AluminiProfileDetail:any= {
     firstname: '',
     lastname: '',
     email: '',
@@ -44,17 +45,45 @@ export class StudentProfileCreateComponent {
   //     });
   // }
 
+  // addAluminiProfileDetails() {
+  //   console.log(this.AluminiProfileDetail);
+  //   this.aluminiServices.addAlumniProfileDetails(this.AluminiProfileDetail)
+  //     .subscribe((res) => {
+  //       console.log(res);
+  //       alert('Profile details added Sucessfully');
+  //       window.location.reload();
+  //     }, err=>{
+  //       alert("Email already registered")
+  //       console.log(err);
+  //     });
+  // }
+
   addAluminiProfileDetails() {
-    console.log(this.AluminiProfileDetail);
-    this.aluminiServices.addAlumniProfileDetails(this.AluminiProfileDetail)
-      .subscribe((res) => {
-        console.log(res);
-        alert('Profile details added Sucessfully');
-        window.location.reload();
-      }, err=>{
-        alert("Email already registered")
-        console.log(err);
-      });
+    const missingValues = [];
+    for (const key in this.AluminiProfileDetail) {
+      if (!this.AluminiProfileDetail[key]) {
+        missingValues.push(key);
+      }
+    }
+  
+    if (missingValues.length > 0) {
+      const missingFields = missingValues.join(', ');
+      alert(`Please enter all data. Missing fields: ${missingFields}`);
+    } else {
+      console.log(this.AluminiProfileDetail);
+      this.aluminiServices.addAlumniProfileDetails(this.AluminiProfileDetail)
+        .subscribe((res) => {
+          console.log(res);
+          alert('Profile details added Sucessfully');
+          // window.location.reload();
+        this.router.navigateByUrl('career')       
+
+        }, err => {
+          alert('Email already registered');
+          console.log(err);
+        });
+    }
   }
+  
 
 }

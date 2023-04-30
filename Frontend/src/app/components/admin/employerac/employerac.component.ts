@@ -27,25 +27,53 @@ export class EmployeracComponent {
   ngOnInit():void{
 
   }
-  signupemployer(){
-    this.api.employersignup(this.data.value).subscribe(res=>{
-      console.log(res);
+  // signupemployer(){
 
-      this.employerac = res
+  //   this.api.employersignup(this.data.value).subscribe(res=>{
+  //     console.log(res);
 
-      if(this.employerac.status =='1'){
+  //     this.employerac = res
+
+  //     if(this.employerac.status =='1'){
         
-      alert('signup success')
-      this.router.navigateByUrl('/admin/manage')
+  //     alert('signup success')
+  //     this.router.navigateByUrl('/admin/manage')
 
-      }
-      else{
-        alert('none')
-      }
+  //     }
+  //     else{
+  //       alert('none')
+  //     }
 
       
-    })
+  //   })
+  // }
+
+  signupemployer() {
+    const formValues = this.data.value;
+    const formKeys = Object.keys(formValues);
+  
+    const missingValues = formKeys.filter(key => {
+      return !formValues[key];
+    });
+  
+    if (missingValues.length > 0) {
+      alert('Please enter all field');
+    } else {
+      this.api.employersignup(formValues).subscribe(res => {
+        console.log(res);
+  
+        this.employerac = res;
+  
+        if (this.employerac.status == '1') {
+          alert('Signup success');
+          this.router.navigateByUrl('/admin/manage');
+        } else {
+          alert('None');
+        }
+      });
+    }
   }
+  
 
 
 }

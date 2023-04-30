@@ -21,12 +21,12 @@
   </div>
 </div> -->
 
-
+<!-- 
 <section class="jobs-container ">
   <h1 class="heading">latest jobs</h1>
   
   <div class="box-container ">
-      <!-- 1 -->
+      
     <div class="box" *ngFor="let jobDetail of jobDetails">
           <div class="company">
               <img src="{{jobDetail.Company_Logo}}" alt="">
@@ -45,7 +45,7 @@
      
       </div>
         <div class="flex-btn">
-        <a class="btn" (click)="openSingleJobDetails(jobDetail)" >view details</a>
+        <a class="btn"  >view details</a>
         <button type="submit" class="bi bi-suit-heart" name="save"></button>
         </div>
     </div>
@@ -54,4 +54,102 @@
   <div style="text-align: center;margin-top: 1 rem; transform: scale(0.7);">
   <a href="" class="btn">view all</a></div>
   </section>
-  
+   -->
+
+   <div class="container">
+    <div class="row">
+      <!-- card start -->
+        <div class="col-lg-4  " *ngFor="let jobDetail of jobDetails">
+            <div class="card card-margin">
+              
+                <div class="card-header no-border" >
+                    <h4 class="card-title"><img src="{{jobDetail.Company_Logo}}" alt=""> {{jobDetail.Company_Name}}</h4>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper" >
+                            <div class="widget-49-date-primary">
+                                <span class="widget-49-date-day">{{jobDetail.start_Date}}</span> 
+                                <span class="widget-49-date-month"><!-- month here --></span> 
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">{{jobDetail.description}}</span>
+                                <span class="widget-49-meeting-time">deadline here</span>
+                            </div>
+                        </div>
+                        <ul class="widget-49-meeting-points" >
+                            <li class="widget-49-meeting-item">Job Title: <span>{{jobDetail.Job_Title}}</span></li>
+                            <li class="widget-49-meeting-item">Location: <span>{{jobDetail.Job_locaion}}</span></li>
+                            <li class="widget-49-meeting-item">Salary: <span>{{jobDetail.Salary}}</span></li>
+                            <li class="widget-49-meeting-item">Skills: <span>                          {{jobDetail.job_skill}}
+                            </span></li>
+                        </ul>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" class="btn btn-sm btn-flash-border-primary btnhover" (click)="openSingleJobDetails(jobDetail)">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- card end -->
+
+        <!-- <div class="col-lg-4">
+            <div class="card card-margin">
+                <div class="card-header no-border">
+                    <h5 class="card-title">MOM</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                            <div class="widget-49-date-warning">
+                                <span class="widget-49-date-day">13</span>
+                                <span class="widget-49-date-month">apr</span>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">PRO-08235 Lexa Corp.</span>
+                                <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                            </div>
+                        </div>
+                        <ol class="widget-49-meeting-points">
+                            <li class="widget-49-meeting-item"><span>Scheming module is removed</span></li>
+                            <li class="widget-49-meeting-item"><span>App design contract confirmed</span></li>
+                            <li class="widget-49-meeting-item"><span>Client request to send invoice</span></li>
+                        </ol>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" class="btn btn-sm btn-flash-border-warning">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-margin">
+                <div class="card-header no-border">
+                    <h5 class="card-title">MOM</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                            <div class="widget-49-date-success">
+                                <span class="widget-49-date-day">22</span>
+                                <span class="widget-49-date-month">apr</span>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">PRO-027865 Opera module</span>
+                                <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                            </div>
+                        </div>
+                        <ol class="widget-49-meeting-points">
+                            <li class="widget-49-meeting-item"><span>Scope is revised and updated</span></li>
+                            <li class="widget-49-meeting-item"><span>Time-line has been changed</span></li>
+                            <li class="widget-49-meeting-item"><span>Received approval to start wire-frame</span></li>
+                        </ol>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" class="btn btn-sm btn-flash-border-success">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    </div>

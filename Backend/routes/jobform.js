@@ -15,16 +15,13 @@ router.post('/', async (req,res)=>{
         console.log(item);
 
 
-        if(item !=''){
+        
             const data = new jobpost(item)
             await data.save()
             res.json({status:'1'})
             console.log('one jobpost data added to db');
-        }
-        else{
-            console.log("data alredy exist");
-            res.json({status:'data alredy exist'})
-        }
+        
+        
         
     } catch (error) {
         console.log(error)
