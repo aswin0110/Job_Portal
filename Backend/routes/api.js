@@ -24,6 +24,9 @@ router.use('/data/alumni', require('./admindashboard'))
 // jobpostform
 router.use('/jobpost', require('./jobform'))
 
+// manageemployee
+router.use('/manageemployee', require('./manageemployee'))
+
 
 
 
