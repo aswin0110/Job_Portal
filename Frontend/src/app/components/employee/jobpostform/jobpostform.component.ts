@@ -19,15 +19,15 @@ export class JobpostformComponent {
   
 
   jobform:any = new FormGroup ({
-    Company_logo: new FormControl(''),
-    Company_Name: new FormControl(''),
-    Job_Title: new FormControl(''),
-    Job_location: new FormControl(''),
-    Salary: new FormControl(''),
-    job_skill: new FormControl(''),
-    start_Date: new FormControl(''),
-    description: new FormControl(''),
-    Employment_Type: new FormControl('')
+    "Company_logo": new FormControl(''),
+    "Company_Name": new FormControl(''),
+    "Job_Title": new FormControl(''),
+    "Job_location": new FormControl(''),
+    "Salary": new FormControl(''),
+    "job_skill": new FormControl(''),
+    "start_Date": new FormControl(''),
+    "description": new FormControl(''),
+    "Employment_Type": new FormControl('')
   
   })
   minDate: Date;

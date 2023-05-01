@@ -13,7 +13,7 @@
                 <span>Have an account?</span>
                 <header>Login</header>
             </div>
-    <form [formGroup]="Login" >
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
             <div class="input-field">
 
                 <input type="email" class="input" formControlName="email" placeholder="email" class="form-control"  [ngClass]="{'is-invalid':loggedin.email.errors&&(loggedin.email.touched||loggedin.email.dirty)}" >
@@ -37,9 +37,11 @@
             </div>
     
             <div class="input-field">
-                <input type="submit" [disabled]="!Login.valid" class="submit" (click)="login()" value="Login">
+                <input type="submit" [disabled]="!loginForm.valid" class="submit" value="Login">
             </div>
+            </form>
     
+   
             <div class="bottom">
                 <div class="left">
                     <input type="checkbox" id="check">
@@ -49,7 +51,7 @@
                     <label><a href="#"> Forgot password? </a></label>
                 </div>
             </div>
-        </form>
+       
         </div>
     </div>
 </div>
