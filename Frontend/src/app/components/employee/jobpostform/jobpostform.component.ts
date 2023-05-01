@@ -40,8 +40,6 @@ export class JobpostformComponent {
    }
 
    onSubmit(){
-    
-    
       
      console.log(this.jobform.value)
     this.apiservice.addjobpost(this.jobform.value).subscribe(res=>{
@@ -55,6 +53,8 @@ export class JobpostformComponent {
 
   // onSubmit() {
   //   const formData = this.jobform.value;
+  //   console.log(formData);
+    
   //   if (!Object.values(formData).every(value => !!value)) {
   //     alert('Please enter all data');
   //   } else {

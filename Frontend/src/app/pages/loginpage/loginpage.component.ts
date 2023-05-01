@@ -20,7 +20,7 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
 
 
 
-  login() {
+  login(){
 
     let value = this.Login.value
     this.service.login(value).subscribe((res:any)=>{
@@ -33,7 +33,7 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
         }
       }
       else{
-        // alert("access denied")
+        alert("access denied")
         this.toastr.error("access denied")
       }
     

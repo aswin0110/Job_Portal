@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 // signup
-router.use('/signup',require('./alumnisignup'))
+router.use('/signup',require('./signupal'))
 
 // employer signup
 router.use('/employersignup',require('./employersignup'))
