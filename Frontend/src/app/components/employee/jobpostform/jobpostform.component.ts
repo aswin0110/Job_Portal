@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { JobpostformService } from 'src/app/services/jobpostform.service';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 // interface Animal {
 //   name: string;
@@ -15,7 +16,7 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
 export class JobpostformComponent {
 
 
-
+  
 
   jobform:any = new FormGroup ({
     Company_logo: new FormControl(''),
@@ -32,12 +33,17 @@ export class JobpostformComponent {
   minDate: Date;
   maxDate: Date;
   
-  constructor( private apiservice:JobpostformService )
+  constructor( private apiservice:JobpostformService, private toastr:ToastrService )
    {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 20, 0, 1);
     this.maxDate = new Date(currentYear + 1, 11, 31);
-   }
+   
+
+  }
+
+ 
+  
 
    onSubmit(){
     
@@ -47,7 +53,7 @@ export class JobpostformComponent {
     this.apiservice.addjobpost(this.jobform.value).subscribe(res=>{
     
       console.log(res)
-      alert("job added successfully")
+      this.toastr.success("job added successfully")
     })
     
   
