@@ -9,23 +9,41 @@ import { TokenInterceptorService } from 'src/app/services/token-interceptor.serv
 export class NavbarComponent {
 
   isElementHidden = false;
-   login = 'j';
+   login:any = ''
   constructor(private apitoken:TokenInterceptorService){}
 
-  // hideElement() {
+
+  hideElement() {
 
     
-  //   // this.isElementHidden = false;x
-  //   // let token =localStorage.getItem('token');
-  //   // this.apitoken.removeToken() 
-  //   // console.log(token);
+    // this.isElementHidden = false;x
+    // let token =localStorage.getItem('token');
+    // console.log(token);
 
-  //   // when clicking logout button jwt token will delete and button should be hidden
-    
-  //   this.login = '' 
+    // when clicking logout button jwt token will delete and button should be hidden
+    const tokenvalue = localStorage.getItem('token')
 
     
+    console.log(tokenvalue);
+
+    if(tokenvalue!=''){
+    this.login = tokenvalue
+    this.apitoken.removeToken() 
+
+
+      console.log('logout button popup');
+      alert('successfully lgouted');
+      
+      
+    }
+    else{
+      console.log('please login');
+
+    }
     
-  // }
+
+    
+    
+  }
 
 }

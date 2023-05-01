@@ -22,11 +22,11 @@ export class TokenInterceptorService implements HttpInterceptor {
   //     return next.handle(tokenizedRequest)
   // }
 
-  // removeToken(){
-  //   localStorage.removeItem('token')
+  removeToken(){
+    localStorage.removeItem('token')
     
     
-  // }
+  }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const token = this.auth.getToken()

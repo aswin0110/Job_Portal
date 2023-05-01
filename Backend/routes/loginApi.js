@@ -34,7 +34,7 @@ const router = express.Router()
 
 var jwt = require('jsonwebtoken');
 const CODE = "this is a job portal application"
-const userModel = require('../model/user')
+const userModel = require('../model/signupModel')
 
 router.post('', async(req, res)=>{  
     try {
