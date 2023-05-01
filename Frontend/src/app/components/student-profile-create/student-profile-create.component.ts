@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AluminiDetailsService } from 'src/app/services/alumini-details.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-student-profile-create',
@@ -9,7 +10,7 @@ import { AluminiDetailsService } from 'src/app/services/alumini-details.service'
 })
 export class StudentProfileCreateComponent {
 
-  constructor(private aluminiServices:AluminiDetailsService, private router:Router){}
+  constructor(private toastr:ToastrService,private aluminiServices:AluminiDetailsService, private router:Router){}
 
   AluminiProfileDetail:any= {
     firstname: '',
@@ -68,18 +69,18 @@ export class StudentProfileCreateComponent {
   
     if (missingValues.length > 0) {
       const missingFields = missingValues.join(', ');
-      alert(`Please enter all data. Missing fields: ${missingFields}`);
+      this.toastr.error(`Please enter all data. Missing fields: ${missingFields}`);
     } else {
       console.log(this.AluminiProfileDetail);
       this.aluminiServices.addAlumniProfileDetails(this.AluminiProfileDetail)
         .subscribe((res) => {
           console.log(res);
-          alert('Profile details added Sucessfully');
+          this.toastr.success('Profile details added Sucessfully');
           // window.location.reload();
         this.router.navigateByUrl('career')       
 
         }, err => {
-          alert('Email already registered');
+          this.toastr.error('Email already registered');
           console.log(err);
         });
     }

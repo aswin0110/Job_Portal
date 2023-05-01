@@ -13,7 +13,7 @@ router.use('/count', require('./countemployerac'))
 // alumni account count
 router.use('/countalumni', require('./countalumniac'))
 
-router.use('/auth', require('./login'))
+router.use('/login', require('./loginApi'))
 
 // login
 router.use("/users", require("./users"));

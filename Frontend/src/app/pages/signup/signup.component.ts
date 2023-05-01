@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from 'src/app/services/signup.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit{
   msg:any
   
 
-  constructor(private router:Router,private fb: FormBuilder, private api:SignupService){}
+  constructor(private router:Router,private fb: FormBuilder, private api:SignupService, private toastr:ToastrService){}
 
   // data:any = new FormGroup({
   //   name:new FormControl(null),
@@ -44,7 +45,7 @@ export class SignupComponent implements OnInit{
       this.signupstatus = res
 
       if (this.signupstatus.status =='1' && this.data.name !=''){
-        alert('signup successfully')
+        this.toastr.success('signup successfully')
         this.router.navigateByUrl('studentProfileCreate')       
       }
       else if(this.signupstatus.status == '2'){

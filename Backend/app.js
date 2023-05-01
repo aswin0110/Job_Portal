@@ -19,7 +19,7 @@ const PORT = 3000
 //  mongoose 
 require('./middlewares/mongoDB')
 require("./middlewares/passport")(passport);
-
+require("./middlewares/jwtVerify");
 // const signupData = require('./model/signupModel')
 
 
