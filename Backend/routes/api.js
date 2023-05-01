@@ -30,4 +30,18 @@ router.use('/jobpost', require('./jobform'))
 
 
 
+
+
+
+
+
+
+
+
+// alumni profile get
+router.use('/alumni', require('./admindashboard'))
+
+
+
+
 module.exports = router

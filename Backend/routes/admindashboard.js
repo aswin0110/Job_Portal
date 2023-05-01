@@ -4,6 +4,8 @@ const router = express.Router()
 const profile = require('../model/alumniModel')
 const signupdata = require('../model/signupModel')
 
+const aluprof = require('../model/alumniModel')
+
 // for admin dashboard: get total alumni acounts count
 router.post('/', async (req, res) => {
     try {
@@ -22,6 +24,21 @@ router.post('/', async (req, res) => {
 
 
   });
+
+
+  // get alumni student profile data 
+  router.post('/alumniprof',async (req,res)=>{
+    let item=req.body
+
+
+    let profile = await aluprof.find({email:item.email});
+    
+    res.json({profile})
+    console.log(profile)
+ 
+
+
+  })
 
   
   module.exports = router

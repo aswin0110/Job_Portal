@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { EmployeracComponent } from '../employerac/employerac.component';
 import { AdminpageService } from 'src/app/services/adminpage.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-manageac',
@@ -18,6 +19,13 @@ export class ManageacComponent {
 
   accounts:any
 
+  email_input:any = new FormGroup({
+    "email":new FormControl('')
+  })
+  email_status:any
+  email_h:String = "aswin@gmail.com"  ;
+
+
   ngOnInit(){
     this.showallempac()
   }
@@ -30,5 +38,18 @@ export class ManageacComponent {
     })
     
   }
+
+  getaludata(){
+
+
+    this.api.getaluprofile(this.email_h).subscribe((res:any)=>{
+      this.email_status = res
+      alert(res.profile.email);
+      
+    })
+  }
+
+
+  
 
 }
