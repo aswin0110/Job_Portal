@@ -33,6 +33,10 @@ export class NavbarComponent {
     this.router.navigateByUrl('/employee')
 
   }
+  else if(localStorage.getItem('name')== 'admin'){
+    this.router.navigateByUrl('/admin')
+
+  }
   else{
     alert('login please')
   }

@@ -57,7 +57,7 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
           // this.status = "Account doesn't exists"
 this.toastr.success('logged successfully')
 
-this.router.navigateByUrl('')
+this.router.navigateByUrl('/career')
 
           return
 
@@ -76,8 +76,7 @@ this.toastr.error('Invalid credentials')
     
     
     
-         
-        this.router.navigateByUrl('/career')
+        this.router.navigateByUrl('')
         location.reload();
 
       })

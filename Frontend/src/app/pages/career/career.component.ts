@@ -23,8 +23,20 @@ export class CareerComponent {
 
 
    // Update a learner Details
-   openSingleJobDetails(jobDetail: any) {
-    localStorage.setItem('editJobId', jobDetail._id.toString());
-    this.router.navigate(['jobapplication'])
+  
+  //  if jwt available go to apply else go to login
+  openSingleJobDetails(jobDetail: any) {
+    let jwtvalue = localStorage.getItem('token');
+  
+    if (jwtvalue == null || jwtvalue == '') {
+      alert('Please Login To Apply');
+      this.router.navigate(['login']);
+    } else {
+      // alert('value available');
+      localStorage.setItem('editJobId', jobDetail._id.toString());
+      this.router.navigate(['jobapplication']);
+      console.log(jwtvalue);
+    }
   }
+  
 }

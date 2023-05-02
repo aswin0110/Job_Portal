@@ -33,38 +33,38 @@ app.use('/alumni', alumniProfileRoute);
 app.use('/career', JobCareerRoute );
 
 
-const alumni = require('./model/signupModel')
-const employer = require('./model/employeeModel')
-app.post('/api/loginn',async (req,res)=>{
+// const alumni = require('./model/signupModel')
+// const employer = require('./model/employeeModel')
+// app.post('/api/loginn',async (req,res)=>{
 
-    let data = req.body
-    console.log(data);
+//     let data = req.body
+//     console.log(data);
 
-    let datafromDB = await alumni.find({email:data.email})
-    let datafromempl = await employer.find({email:data.email})
-    let datarolealu = await alumni.find({role:data.role})
-    let dataroleempl = await employer.find({role:data.role})
+//     let datafromDB = await alumni.find({email:data.email})
+//     let datafromempl = await employer.find({email:data.email})
+//     let datarolealu = await alumni.find({role:data.role})
+//     let dataroleempl = await employer.find({role:data.role})
 
-    if(datafromDB!= '' || datafromempl !='' ){
-        console.log('data available');
+//     if(datafromDB!= '' || datafromempl !='' ){
+//         console.log('data available');
 
-        let dataalupass = await alumni.find({password:data.password})
-        let dataemolpass = await employer.find({password:data.password})
-        if( dataalupass!='' || dataemolpass!= '' && datarolealu !='' || dataroleempl !=''){
-            console.log('password available');
+//         let dataalupass = await alumni.find({password:data.password})
+//         let dataemolpass = await employer.find({password:data.password})
+//         if( dataalupass!='' || dataemolpass!= '' && datarolealu !='' || dataroleempl !=''){
+//             console.log('password available');
             
-            if(data.role =='alumni'){
-            res.json({status:'alumni page'})
+//             if(data.role =='alumni'){
+//             res.json({status:'alumni page'})
 
-            }
-            else if(data.role =='employer'){
-            res.json({status:'employer page'})
+//             }
+//             else if(data.role =='employer'){
+//             res.json({status:'employer page'})
 
-            }
-            else{
-            res.json({status:'role error '})
+//             }
+//             else{
+//             res.json({status:'role error '})
 
-            }
+//             }
 
         //     if(){
         //         console.log('redirect page to alumni');
@@ -79,22 +79,45 @@ app.post('/api/loginn',async (req,res)=>{
         //         res.json({status:"role error"})
         //     }
             
-        }
-        else{
-            console.log('pass not');
-        }
-        // console.log(dats.email);
+//         }
+//         else{
+//             console.log('pass not');
+//         }
+//         // console.log(dats.email);
 
-        // console.log(datafromDB.email, datafromempl.email);
+//         // console.log(datafromDB.email, datafromempl.email);
 
-    }
-    else{
-        res.json({status:'2'})
+//     }
+//     else{
+//         res.json({status:'2'})
 
-        console.log('data not available');
-    }
+//         console.log('data not available');
+//     }
 
 
+// })
+
+// app.get('/api/:id', (req,res)=>{
+//     const id = req.params.id;
+//     const collection = require('./model/adminModel')
+//     const ObjectId = require('./middlewares/mongoDB').ObjectId;
+//     collection.findOne({ _id: ObjectId(id) }, (err, data) => {
+//         if (err) throw err;
+//         res.send(data);
+//       });
+    
+    
+    
+// })
+
+app.post('/apiadmin', async (req,res) =>{
+    const collection = require('./model/adminModel')
+
+    let item = req.body
+    let data = await collection.findOne(item, { name: 1, _id: 0 })
+    res.json(data)
+    console.log(data);
+    console.log(data);
 })
 
 

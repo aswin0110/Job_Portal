@@ -30,5 +30,12 @@ getaluprofile(data:any){
   return this.http.post(`${this.apiUrl}/alumni/alumniprof`, data)
 }
 
+getadminname(id:any){
+  return this.http.post(`http://localhost:3000/api/apiadmin`, id)
+
+}
+
+
+
 
 }

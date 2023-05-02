@@ -1,9 +1,9 @@
 <div class="container border">
     <nav>
-      <ul>
-        <li><a routerLink="/admin" class="logo">
+      <ul >
+        <li ><a routerLink="/admin" class="logo">
           <img src="../../../assets/images/bg cont.webp">
-          <span class="nav-item">Admin</span>
+          <span class="nav-item" *ngIf="adminname">{{adminname}}</span>
         </a></li>
         <li><a routerLink="verify"> <i class="bi fa-2x bi-file-check"></i>
           <span class="nav-item">Verify Job Post</span>
