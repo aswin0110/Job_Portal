@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TokenInterceptorService } from 'src/app/services/token-interceptor.service';
 
 @Component({
@@ -12,19 +13,35 @@ export class NavbarComponent {
    login:any = ''
    showNavItem: any;
 
-  constructor(private apitoken:TokenInterceptorService){
+  constructor(private apitoken:TokenInterceptorService, private router: Router){
     
   }
 
   ngOnInit(){
     this.showNavItem = localStorage.getItem('name') ;
     console.log(this.showNavItem);
+
+    
     
     
 
   }
 
 
+  clickme(){
+
+    if (localStorage.getItem('name')== 'alumni'){
+      this.router.navigateByUrl('/alumni')
+
+  }
+  else if(localStorage.getItem('name')== 'employer'){
+    this.router.navigateByUrl('/employee')
+
+  }
+  else{
+    alert('login please')
+  }
+  }
   hideElement() {
 
     

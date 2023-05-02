@@ -57,7 +57,7 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
           // this.status = "Account doesn't exists"
 this.toastr.success('logged successfully')
 
-this.router.navigateByUrl('#')
+this.router.navigateByUrl('')
 
           return
 
