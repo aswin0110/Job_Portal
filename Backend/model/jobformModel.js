@@ -36,6 +36,10 @@ const JobSchema = new Schema ({
     job_skill:{
         type:String,
         required:true
+    },
+    Employment_Type:{
+        type:String,
+        required:true
     }
 })
     

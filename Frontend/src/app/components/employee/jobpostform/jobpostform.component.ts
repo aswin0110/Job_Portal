@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { JobpostformService } from 'src/app/services/jobpostform.service';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { FormBuilder,FormGroup,FormControl,Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 // interface Animal {
@@ -15,44 +15,61 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class JobpostformComponent {
 
-  
+  jobForm: FormGroup;
   
 
-  jobform:any = new FormGroup ({
-    "Company_logo": new FormControl(''),
-    "Company_Name": new FormControl(''),
-    "Job_Title": new FormControl(''),
-    "Job_location": new FormControl(''),
-    "Salary": new FormControl(''),
-    "job_skill": new FormControl(''),
-    "start_Date": new FormControl(''),
-    "description": new FormControl(''),
-    "Employment_Type": new FormControl('')
+  // jobform:any = new FormGroup ({
+  //   "Company_logo": new FormControl(''),
+  //   "Company_Name": new FormControl(''),
+  //   "Job_Title": new FormControl(''),
+  //   "Job_location": new FormControl(''),
+  //   "Salary": new FormControl(''),
+  //   "job_skill": new FormControl(''),
+  //   "start_Date": new FormControl(''),
+  //   "description": new FormControl(''),
+  //   "Employment_Type": new FormControl('')
   
-  })
+  // })
   minDate: Date;
   maxDate: Date;
   
-  constructor( private apiservice:JobpostformService, private toastr:ToastrService )
+  constructor(private formBuilder: FormBuilder, private apiservice:JobpostformService, private toastr:ToastrService )
    {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 20, 0, 1);
     this.maxDate = new Date(currentYear + 1, 11, 31);
    
+    this.jobForm = this.formBuilder.group({
+      Company_logo: ['', Validators.required],
+      Company_Name: ['', Validators.required],
+      Job_Title: ['', Validators.required],
+      Job_location: ['', Validators.required],
+      Salary: ['', Validators.required],
+      job_skill: ['', Validators.required],
+      start_Date: ['', Validators.required],
+      description: ['', Validators.required],
+      Employment_Type: ['', Validators.required]
 
+ });
   }
 
  
   
 
-   onSubmit(){
+   submitJob(){
       
-     console.log(this.jobform.value)
-    this.apiservice.addjobpost(this.jobform.value).subscribe(res=>{
+    if(this.jobForm.valid){
+      this.apiservice.addjobpost(this.jobForm.value).subscribe(res=>{
     
-      console.log(res)
-      this.toastr.success("job added successfully")
-    })
+        console.log('job posted successfully',res)
+        this.toastr.success("job added successfully")
+      },
+      error=>{
+        console.log('error posting job:',error);
+      }
+      );
+    }
+   
     
   
   }

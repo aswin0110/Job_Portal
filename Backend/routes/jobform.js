@@ -1,55 +1,90 @@
 const express = require('express')
 const router = express.Router()
 
-const jobpost = require('../model/jobformModel')
+const JobDATA = require('../model/jobformModel')
 
 const jobAppliedModel = require('../model/jobAppliedModel')
 
 // signup
 
-router.post('/', async (req,res)=>{
+// router.post('/', async (req,res)=>{
     
+//     try {
+//         let item = req.body
+//         console.log(item);
 
-    try {
-        let item = req.body
-        console.log(item);
-
-
-        
-            const data = new jobpost(item)
-            await data.save()
-            res.json({status:'1'})
-            console.log('one jobpost data added to db');
-            console.log(item);
 
         
+//             const data = new JobDATA(item)
+//             await data.save()
+//             res.json({status:'1'})
+//             console.log('one jobpost data added to db');
+//             console.log(item);
+
         
-    } catch (error) {
-        console.log(error)
-        res.json({ message: error }).status(400)
         
-    }
-})
-// get all signup details : admin use only
-// router.get('/admin/signupdetails', async (req,res)=>{
-//     let data = await signupData.find()
-//     res.json(data)
+//     } catch (error) {
+//         console.log(error)
+//         res.json({ message: error }).status(400)
+        
+//     }
 // })
-
-
-
-// {
-//     "Company_Logo":"https://iaccessibility.net/wp-content/uploads/2018/04/indeed-employer-logo.png",
-//     "Company_Name":"test2",
-//     "Job_Title":"test",
-//     "Job_locaion":"test",
-//     "start_Date":"tset",
-//     "Salary":"65200",
-//     "Employment_Type":"full time",
-//     "description":"sdfslkdfksdnj"
+router.post('/', async(req,res)=>{
     
-    
+  try {
+
+      let item = {  //to fetch and save data from frontend in server
+            Company_Logo: req.body.Company_Logo,
+            Company_Name: req.body.Company_Name,
+            Job_Title: req.body.Job_Title,
+            Job_locaion: req.body.Job_locaion,
+            start_Date: req.body.start_Date,
+            Salary: req.body.Salary,
+            Employment_Type: req.body.Employment_Type,
+            description: req.body.description,
+            job_skill: req.body.job_skill
+         }
+        //  let token = req.headers
+        //  console.log('token from front end',token)
+        //  if(item== null) throw ('no data')
+
+          const newJob = new JobDATA(item)   //to check incoming data 
+          const saveJob = await newJob.save()  //mongodb save
+          res.json({ message: 'Data saved successfully' }).status(201)
+          res.send(saveJob)
+        console.log(saveJob)
+          
+  } catch (error) {
+      console.log(error)
+      res.json({message:error}).status(400)
+  }
+})
+
+
+// router.post('/', async (req, res) => {
+
+//   const job = new JobDATA({
+//     Company_Logo: req.body.Company_Logo,
+//     Company_Name: req.body.Company_Name,
+//     Job_Title: req.body.Job_Title,
+//     Job_locaion: req.body.Job_locaion,
+//     start_Date: req.body.start_Date,
+//     Salary: req.body.Salary,
+//     Employment_Type: req.body.Employment_Type,
+//     description: req.body.description,
+//     job_skill: req.body.job_skill
+
+//   });
+// console.log(job)
+//   try {
+//     const savedJob = await job.save();
+//     res.json(savedJob);
+//   } catch (error) {
+//     res.status(500).json({ message: 'Error saving job' });
 //   }
+// });
+
+
 
 // career get request main page
 
