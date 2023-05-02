@@ -1,88 +1,56 @@
 const express = require('express')
 const router = express.Router()
 
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.json());
 const JobDATA = require('../model/jobformModel')
 
 const jobAppliedModel = require('../model/jobAppliedModel')
 
-// signup
+router.post('/', async (req, res) => {
+  const { Company_Logo,Company_Name,Job_Title, Job_locaion,start_Date,Salary,Employment_Type,description,job_skill} = req.body;
 
-// router.post('/', async (req,res)=>{
-    
-//     try {
-//         let item = req.body
-//         console.log(item);
-
-
-        
-//             const data = new JobDATA(item)
-//             await data.save()
-//             res.json({status:'1'})
-//             console.log('one jobpost data added to db');
-//             console.log(item);
-
-        
-        
-//     } catch (error) {
-//         console.log(error)
-//         res.json({ message: error }).status(400)
-        
-//     }
-// })
-router.post('/', async(req,res)=>{
-    
   try {
-
-      let item = {  //to fetch and save data from frontend in server
-            Company_Logo: req.body.Company_Logo,
-            Company_Name: req.body.Company_Name,
-            Job_Title: req.body.Job_Title,
-            Job_locaion: req.body.Job_locaion,
-            start_Date: req.body.start_Date,
-            Salary: req.body.Salary,
-            Employment_Type: req.body.Employment_Type,
-            description: req.body.description,
-            job_skill: req.body.job_skill
-         }
-        //  let token = req.headers
-        //  console.log('token from front end',token)
-        //  if(item== null) throw ('no data')
-
-          const newJob = new JobDATA(item)   //to check incoming data 
-          const saveJob = await newJob.save()  //mongodb save
-          res.json({ message: 'Data saved successfully' }).status(201)
-          res.send(saveJob)
-        console.log(saveJob)
-          
-  } catch (error) {
-      console.log(error)
-      res.json({message:error}).status(400)
+    const job = await JobDATA.create({ Company_Logo,Company_Name,Job_Title, Job_locaion,start_Date,Salary,Employment_Type,description,job_skill });
+    res.json(job);
+  } catch (err) {
+    console.error('Error creating job:', err);
+    res.status(500).json({ message: 'Internal server error' });
   }
-})
+});
 
 
-// router.post('/', async (req, res) => {
-
-//   const job = new JobDATA({
-//     Company_Logo: req.body.Company_Logo,
-//     Company_Name: req.body.Company_Name,
-//     Job_Title: req.body.Job_Title,
-//     Job_locaion: req.body.Job_locaion,
-//     start_Date: req.body.start_Date,
-//     Salary: req.body.Salary,
-//     Employment_Type: req.body.Employment_Type,
-//     description: req.body.description,
-//     job_skill: req.body.job_skill
-
-//   });
-// console.log(job)
+// router.post('/', async(req,res)=>{
+    
 //   try {
-//     const savedJob = await job.save();
-//     res.json(savedJob);
+
+//       let item = {  //to fetch and save data from frontend in server
+//             Company_Logo: req.body.Company_Logo,
+//             Company_Name: req.body.Company_Name,
+//             Job_Title: req.body.Job_Title,
+//             Job_locaion: req.body.Job_locaion,
+//             start_Date: req.body.start_Date,
+//             Salary: req.body.Salary,
+//             Employment_Type: req.body.Employment_Type,
+//             description: req.body.description,
+//             job_skill: req.body.job_skill
+//          }
+       
+//           const newJob = new JobDATA(item)   //to check incoming data 
+//           const saveJob = await newJob.save()  //mongodb save
+//           res.json({ message: 'Data saved successfully' }).status(201)
+//           res.send(saveJob)
+//         console.log(saveJob)
+          
 //   } catch (error) {
-//     res.status(500).json({ message: 'Error saving job' });
+//       console.log(error)
+//       res.json({message:error}).status(400)
 //   }
-// });
+// })
+
+
+
 
 
 
