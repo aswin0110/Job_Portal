@@ -16,7 +16,7 @@ router.use('/countalumni', require('./countalumniac'))
 router.use('/login', require('./loginApi'))
 
 // login
-router.use("/users", require("./users"));
+// router.use("/users", require("./users"));
 
 // get profile for admin dashboard
 router.use('/data/alumni', require('./admindashboard'))
@@ -27,6 +27,8 @@ router.use('/jobpost', require('./jobform'))
 // manageemployee
 // router.use('/manageemployee', require('./manageemployee'))
 
+// employerfrontpg coursecount
+router.use('/countcourse', require('./coursecount'))
 
 
 

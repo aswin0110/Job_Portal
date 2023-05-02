@@ -28,10 +28,7 @@ const JobSchema = new Schema ({
         required:true
     
     },
-    Employment_Type:{
-        type:String,
-        required:true
-    },
+   
     description:{
         type:String,
         required:true

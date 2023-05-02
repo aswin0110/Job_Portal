@@ -35,6 +35,17 @@ export class JobpostformService {
   addjobpost(data:any){
     return this.http.post<any>('http://localhost:3000/api/jobpost/',data)
   }
+
+  // count for course
+  coursecount(){
+    return this.http.get('http://localhost:3000/api/countcourse/data/countcourse' )
+  
+  }
+
+  coursename(){
+    return this.http.get('http://localhost:3000/api/countcourse/data/coursename' )
+  
+  }
 }
 
 

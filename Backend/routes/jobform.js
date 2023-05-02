@@ -20,7 +20,8 @@ router.post('/', async (req,res)=>{
             await data.save()
             res.json({status:'1'})
             console.log('one jobpost data added to db');
-        
+            console.log(item);
+
         
         
     } catch (error) {
