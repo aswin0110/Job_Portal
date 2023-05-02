@@ -35,6 +35,8 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
 
   // get f() { return this.loginForm.controls; }
 
+
+
   onSubmit(){
     this.submitted = true
     
@@ -54,7 +56,8 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
           this.status = "Account doesn't exists"
           // this.status = "Account doesn't exists"
 this.toastr.success('logged successfully')
-this.router.navigateByUrl('career')
+
+this.router.navigateByUrl('#')
 
           return
 
@@ -68,12 +71,21 @@ this.toastr.error('Invalid credentials')
         
         localStorage.setItem('token', userData[1])
         localStorage.setItem('id', userData[0][0]._id)
-        localStorage.setItem('user', userData[0][0].userName)
+        localStorage.setItem('name', userData[0][0].role)
+        // localStorage.setItem('role', userData[0][0].userName)
+    
+    
     
          
-        this.router.navigateByUrl('')
+        this.router.navigateByUrl('/career')
+        location.reload();
+
       })
     }
+
+   
+
+    
   }
 
 
