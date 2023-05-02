@@ -20,14 +20,9 @@ export class NavbarComponent {
   ngOnInit(){
     this.showNavItem = localStorage.getItem('name') ;
     console.log(this.showNavItem);
-
-    
-    
-    
-
   }
 
-
+// for dashboard
   clickme(){
 
     if (localStorage.getItem('name')== 'alumni'){
@@ -42,6 +37,8 @@ export class NavbarComponent {
     alert('login please')
   }
   }
+
+  // for logout
   hideElement() {
 
     
