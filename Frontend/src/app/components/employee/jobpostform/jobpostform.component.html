@@ -1,83 +1,41 @@
-<!-- <div class="card">
-    <div class="container">
-        <form class="text-light" >
-            <div class="mb-1 ">
-              <label for="exampleInputEmail1" class="form-label">Company Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-1">
-              <label for="exampleInputEmail1" class="form-label">Job Title</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-1">
-              <label for="exampleInputEmail1" class="form-label">Location</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            -->
-
-<form [formGroup]="jobForm" (ngSubmit)="submitJob()">
-
-  <mat-form-field class="box logo" appearance="fill">
-    <mat-label>Company_logo</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field class="box" appearance="fill">
-    <mat-label>Company_Name</mat-label>
-    <input matInput>
-  </mat-form-field>
-  
-  <mat-form-field class="box" appearance="fill">
-    <mat-label>Job_Title</mat-label>
-    <input matInput>
-  </mat-form-field>
-  
-  <mat-form-field class="box" appearance="fill">
-    <mat-label>Job_location</mat-label>
-    <input matInput>
-  </mat-form-field>
-  
-  <mat-form-field class=" box example-full-width" appearance="fill">
-    <mat-label>start_Date</mat-label>
-    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  
-  <mat-form-field class="box" appearance="fill">
-    <mat-label>Salary</mat-label>
-    <mat-select>
-      <mat-option value="one">5k - 10k</mat-option>
-      <mat-option value="two">10k - 20k</mat-option>
-      <mat-option value="two">30k - 40k</mat-option>
-      <mat-option value="two">50k - 60k</mat-option>
-      <mat-option value="two">60k - 70k</mat-option>
-
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field class="box" appearance="fill">
-    <mat-label>job_skill</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field class="box" appearance="fill">
-    <mat-label>Employment_Type</mat-label>
-    <input matInput>
-  </mat-form-field>
-  
- 
-  <mat-form-field class="box text" appearance="fill">
-    <mat-label>description</mat-label>
-    <textarea matInput #input maxlength="30" placeholder="Description"></textarea>
-    <mat-hint align="end">{{input.value.length}}/30</mat-hint>
-  </mat-form-field>
 
 
-  <section>
-    <div class="example-button-row">
-      <button mat-raised-button color="accent">Submit</button>
-       </div>
-  </section>
-  
+
+
+<form [formGroup]="item" (ngSubmit)="onSubmitpost()">
+  <div class="input-field">
+    <input type="text" class="input" placeholder="Company_Logo" required formControlName="Company_Logo">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="Company_Name" required formControlName="Company_Name">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="Job_Title" required formControlName="Job_Title">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="Job_locaion" required formControlName="Job_locaion">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="Salary" required formControlName="Salary">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="job_skill" required formControlName="job_skill">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="start_Date" required formControlName="start_Date">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="description" required formControlName="description">
+  </div>
+  <div class="input-field">
+    <input type="text" class="input" placeholder="Employment_Type" required formControlName="Employment_Type">
+  </div>
+
+
+
+
+  <div class="input-field">
+    <!-- <input type="submit" class="submit" value="Signup" > -->
+    <button> signup</button>
+</div>
 </form>

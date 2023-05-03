@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class JobpostformComponent {
 
-  jobForm: FormGroup;
+  // jobForm: FormGroup;
   
 
   // jobform:any = new FormGroup ({
@@ -39,40 +39,57 @@ export class JobpostformComponent {
     this.minDate = new Date(currentYear - 20, 0, 1);
     this.maxDate = new Date(currentYear + 1, 11, 31);
    
-    this.jobForm = this.formBuilder.group({
-      Company_logo: ['', Validators.required],
-      Company_Name: ['', Validators.required],
-      Job_Title: ['', Validators.required],
-      Job_location: ['', Validators.required],
-      Salary: ['', Validators.required],
-      job_skill: ['', Validators.required],
-      start_Date: ['', Validators.required],
-      description: ['', Validators.required],
-      Employment_Type: ['', Validators.required]
+//     this.jobForm = this.formBuilder.group({
+//       Company_logo: ['', Validators.required],
+//       Company_Name: ['', Validators.required],
+//       Job_Title: ['', Validators.required],
+//       Job_location: ['', Validators.required],
+//       Salary: ['', Validators.required],
+//       job_skill: ['', Validators.required],
+//       start_Date: ['', Validators.required],
+//       description: ['', Validators.required],
+//       Employment_Type: ['', Validators.required]
 
- });
+//  });
+
   }
+  item:any = new FormGroup({
+    'Company_Logo':new FormControl(''),
+      'Company_Name':new FormControl(''),
+      'Job_Title': new FormControl(''),
+      'Job_locaion':new FormControl(''),
+      'Salary': new FormControl(''),
+      'job_skill':new FormControl(''),
+      'start_Date': new FormControl(''),
+      'description':new FormControl(''),
+      'Employment_Type': new FormControl('')
+  })
+  poststatus:any
+
+
 
  
   
 
-   submitJob(){
+  // submitJob(){
       
-    if(this.jobForm.valid){
-      this.apiservice.addjobpost(this.jobForm.value).subscribe(res=>{
+  //   if(this.jobForm.valid){
+  //     this.apiservice.addjobpost(this.jobForm.value).subscribe(res=>{
     
-        console.log('job posted successfully',res)
-        this.toastr.success("job added successfully")
-      },
-      error=>{
-        console.log('error posting job:',error);
-      }
-      );
-    }
+  //       console.log('job posted successfully',res)
+  //       this.toastr.success("job added successfully")
+  //     },
+  //     error=>{
+  //       console.log('error posting job:',error);
+  //     }
+  //     );
+  //   }
    
     
+
+    
   
-  }
+  // }
 
   // onSubmit() {
   //   const formData = this.jobform.value;
@@ -89,7 +106,20 @@ export class JobpostformComponent {
   //   }
   // }
   
-
+  onSubmitpost(){
+    this.apiservice.jobposttocareer(this.item.value).subscribe(res=>{
+      this.poststatus = res
+      if(this.poststatus.status=='1'){
+        this.toastr.success('signup successfully')
+        console.log(this.item);
+        
+        
+      }
+      else{
+        alert('something went wrong')
+      }
+    })
+  }
 
   
  

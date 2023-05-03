@@ -4,8 +4,7 @@ const Schema = Mongoose.Schema
 
 const JobSchema = new Schema ({
     Company_Logo:{
-        type:String,
-        required:true
+        type:String
     },
     Company_Name:{
         type:String,
