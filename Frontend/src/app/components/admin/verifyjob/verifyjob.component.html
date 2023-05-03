@@ -7,23 +7,23 @@
             <th>Alumni Name</th>
             <th>Employer Name</th>
             <th>Job Title</th>
-            <th>Employment type</th>
+            <th>Job Location</th>
             <th>Mail id</th>
             <th>Course</th>
             <th>Verify</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Amal P</td>
-            <td>Analitica</td>
-            <td>Web Developer</td>
-            <td>Full Time</td>
-            <td>amal5444@gmail.com</td>
+          <tr *ngFor="let item of datas">
+            <td>{{ item.firstname }} {{ item.lastname }}</td>
+            <td>{{ item.Company_Name }}</td>
+            <td>{{ item.Job_Title }}</td>
+            <td>{{ item.Job_locaion }}</td>
+            <td>{{ item.email }}</td>
             <td>FSD</td>
             <td><button>Veriy</button> <button style="color: red;">Decline</button></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>Akhil K</td>
             <td>Analitica</td>
             <td>Web Developer</td>
@@ -40,7 +40,7 @@
             <td>akash852@gmail.com</td>
             <td>FSD</td>
             <td><button>Veriy</button> <button style="color: red;">Decline</button></td>
-          </tr>
+          </tr> -->
           
         </tbody>
       </table>

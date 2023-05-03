@@ -122,17 +122,28 @@ app.post('/apiadmin', async (req,res) =>{
 
 
 // wheen the email id matches you can get the data from db
-app.post('/apijobapply', async (req,res) =>{
+app.get('/apijobapply', async (req,res) =>{
 const jobappliedData = require('./model/jobAppliedModel')
-
-
-    let item = req.body
-    let data = await jobappliedData.findOne({email:item.email})
+    // let item = req.body
+    let data = await jobappliedData.find()
     res.json(data)
-    console.log(data);
     console.log(data);
 })
 
+// delete a job apply form
+
+// app.post('/apijobapply', async (req, res) => {
+//     const jobappliedData = require('./model/jobAppliedModel');
+//     const { email } = req.body;
+//     const data = await jobappliedData.findOne({ email });
+//     if (data) {
+//       const { firstname, lastname } = data;
+//       const name = `${firstname} ${lastname}`;
+//       res.json({ name });
+//     } else {
+//       res.json({ message: 'No data found for the given email' });
+//     }
+//   });
 
 
 

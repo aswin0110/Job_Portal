@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminpageService } from 'src/app/services/adminpage.service';
 
 @Component({
   selector: 'app-verifyjob',
@@ -9,11 +10,27 @@ import { Router } from '@angular/router';
 export class VerifyjobComponent {
 
   token =localStorage.getItem('token');
-  constructor(private router:Router){}
+  constructor(private router:Router, private api:AdminpageService){}
 
-  ngOnInit(){
+  datas: any[] = [];
+  ngOnInit(): void{
+    
+    
+    this.api.getAllData().subscribe(data => {
+      this.datas = data;
+    });
+    
 
   }
+
+  // getdata(){
+  //   this.api.getAllData()
+  //     .subscribe((res: any) => {
+  //       this.jobs = res.data;
+  //       console.log(res);
+        
+  //     });
+  // }
   
 
 

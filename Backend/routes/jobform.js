@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 const JobDATA = require('../model/jobformModel')
+const jobpost = require('../model/jobformModel')
 
 const jobAppliedModel = require('../model/jobAppliedModel')
 
