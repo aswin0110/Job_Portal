@@ -13,13 +13,14 @@ export class AdminComponent {
   adminname:any
   name = localStorage.getItem('id')
   ngOnInit(){
+    this.getadminnames();
 
   }
 
   getadminnames(){
-    this.api.getadminname(this.name).subscribe((res:any)=>{
+    this.api.getadminname(localStorage.getItem('id')).subscribe((res:any)=>{
       this.adminname = res
-      console.log(res);
+      console.log();
       
     })
   }

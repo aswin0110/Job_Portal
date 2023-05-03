@@ -75,4 +75,7 @@ router.post('/', async (req, res) => {
   }
   })
   
+  // get alumni applied jobs
+  
+
   module.exports = router

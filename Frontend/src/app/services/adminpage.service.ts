@@ -31,7 +31,7 @@ getaluprofile(data:any){
 }
 
 getadminname(id:any){
-  return this.http.post(`http://localhost:3000/api/apiadmin`, id)
+  return this.http.post(`http://localhost:3000/apiadmin`, {email: id})
 
 }
 

@@ -43,6 +43,8 @@ router.use('/countcourse', require('./coursecount'))
 // alumni profile get
 router.use('/alumni', require('./admindashboard'))
 
+// get data in a table: alumni job applied verify or decline from admin
+
 
 
 

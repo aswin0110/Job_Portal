@@ -121,6 +121,19 @@ app.post('/apiadmin', async (req,res) =>{
 })
 
 
+// wheen the email id matches you can get the data from db
+app.post('/apijobapply', async (req,res) =>{
+const jobappliedData = require('./model/jobAppliedModel')
+
+
+    let item = req.body
+    let data = await jobappliedData.findOne({email:item.email})
+    res.json(data)
+    console.log(data);
+    console.log(data);
+})
+
+
 
 
 

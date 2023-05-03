@@ -67,6 +67,7 @@ export class NavbarComponent {
     localStorage.removeItem('token')
     localStorage.removeItem('id')
     localStorage.removeItem('name')
+    localStorage.removeItem('email')
     location.reload();
 
 
