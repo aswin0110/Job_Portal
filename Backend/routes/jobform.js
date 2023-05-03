@@ -75,11 +75,18 @@ router.get("/jobDetails/:id", (req, res) => {
   });
 
   // add the job applied to collection in cluting job details
-  router.post('/appliedJob', (req,res)=>{
-    // let data = req.body
-    let data = new  jobAppliedModel(req.body)
-    data.save()
+  router.post('/appliedJob', async (req,res)=>{
+    try {
+    let datas = req.body
+    console.log(datas);
+    let data = new jobAppliedModel(req.body)
+    await data.save()
     res.json({status:'1'})
+      
+    } catch (error) {
+      console.log(error);
+      res.status(500)
+    }
 })
 
   

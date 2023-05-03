@@ -18,6 +18,7 @@ export class JobApplicationComponent {
      Salary: '',
      Employment_Type: '',
      description: '',
+     job_id: '',
      
      firstname: '',
      lastname: '',
@@ -31,20 +32,29 @@ export class JobApplicationComponent {
      resumeLink:'',
     
   }
+
+  jobapply:any = {
+
+  }
   // jobDetails: jobDataModel [] = [];
   constructor(private jobServices:JobpostformService, private router:Router){}
 
 ngOnInit(): void{
   let jobId = localStorage.getItem('editJobId');
   this.jobServices.getSingleJobDetails(jobId).subscribe((data) => {
-    this.jobDetails = JSON.parse(JSON.stringify(data));
+    this.jobapply = JSON.parse(JSON.stringify(data));
+    console.log("hai",this.jobapply);
+    
   });
 }
 
 applyJob() {
-  console.log(this.jobDetails);
-  this.jobServices.applyJob(this.jobDetails)
-    .subscribe((res) => {
+  this.jobDetails.Company_Name = this.jobapply.Company_Name
+  this.jobDetails.job_id = this.jobapply._id
+  this.jobDetails.Job_Title = this.jobapply.Job_Title
+  this.jobDetails.Job_locaion = this.jobapply.Job_locaion
+  console.log("aaaaaaaa",this.jobDetails);
+  this.jobServices.applyJob(this.jobDetails).subscribe((res) => {
       console.log(res);
       alert('Job applied Sucessfully');
       this.router.navigate(['/alumni/manageJobPost'])

@@ -41,6 +41,13 @@ getadminname(id:any){
     return this.http.get<any[]>(`http://localhost:3000/apijobapply`);
   }
 
+  updatejobapply(item:any){
+    return this.http.put(`http://localhost:3000/deletejobapplies` ,item )
+  }
+  verifyjobapply(item:any){
+    return this.http.put(`http://localhost:3000/verifyjobapplies` ,item )
+  }
+
 
 
 

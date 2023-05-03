@@ -124,13 +124,37 @@ app.post('/apiadmin', async (req,res) =>{
 // wheen the email id matches you can get the data from db
 app.get('/apijobapply', async (req,res) =>{
 const jobappliedData = require('./model/jobAppliedModel')
-    // let item = req.body
+    let item = req.body
     let data = await jobappliedData.find()
     res.json(data)
     console.log(data);
 })
 
-// delete a job apply form
+// when id matches adminverify will change
+app.put('/deletejobapplies', async (req,res)=>{
+    let item = req.body
+    console.log(item,"gfgfg");
+    const jobappliedData = require('./model/jobAppliedModel')
+
+    let datas = await jobappliedData.findByIdAndUpdate({_id:item._id}, {adminverify:'reject'})
+    res.json({message:'data updated'})
+
+    
+})
+
+// when click verify 
+app.put('/verifyjobapplies', async (req,res)=>{
+    let item = req.body
+    console.log(item,"gfgfg");
+    const jobappliedData = require('./model/jobAppliedModel')
+
+    let datas = await jobappliedData.findByIdAndUpdate({_id:item._id}, {adminverify:'verified'})
+    res.json({message:'data updated'})
+
+})
+
+
+
 
 // app.post('/apijobapply', async (req, res) => {
 //     const jobappliedData = require('./model/jobAppliedModel');
@@ -144,6 +168,8 @@ const jobappliedData = require('./model/jobAppliedModel')
 //       res.json({ message: 'No data found for the given email' });
 //     }
 //   });
+
+
 
 
 

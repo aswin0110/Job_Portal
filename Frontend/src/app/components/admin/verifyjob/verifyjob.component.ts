@@ -19,8 +19,24 @@ export class VerifyjobComponent {
     this.api.getAllData().subscribe(data => {
       this.datas = data;
     });
+
     
 
+  }
+
+  deleteapply(item:any){
+    this.api.updatejobapply({_id:item}).subscribe((res:any)=>{
+      alert('deleted successfully')
+      this.ngOnInit()
+    })
+  }
+
+  verifydata(item:any){
+    this.api.verifyjobapply({_id:item}).subscribe((res:any)=>{
+      alert('verify successfully')
+      
+      this.ngOnInit()
+    })
   }
 
   // getdata(){
