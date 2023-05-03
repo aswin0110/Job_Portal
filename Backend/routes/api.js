@@ -38,7 +38,8 @@ router.use('/countcourse', require('./coursecount'))
 
 
 
-
+// get admin name in a dashboard when id matches
+router.use('/getnameadmin', require('./admindashboard'))
 
 // alumni profile get
 router.use('/alumni', require('./admindashboard'))

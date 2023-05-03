@@ -75,7 +75,15 @@ router.post('/', async (req, res) => {
   }
   })
   
-  // get alumni applied jobs
+  // /getnameadmin/adminname
+  router.post('/adminname', async (req, res) => {
+    const collection = require('../model/adminModel');
+  
+    let item = { _id: req.body.id };
+    let data = await collection.findOne(item, { name: 1, _id: 0 }).exec();
+    res.json(data);
+    console.log(data);
+  });
   
 
   module.exports = router

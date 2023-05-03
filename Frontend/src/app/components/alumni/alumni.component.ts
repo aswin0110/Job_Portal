@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AlumniComponent {
  
+  alumniname:any=localStorage.getItem('user')
 
 
 

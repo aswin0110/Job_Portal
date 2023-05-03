@@ -72,6 +72,7 @@ this.toastr.error('Invalid credentials')
         localStorage.setItem('token', userData[1])
         localStorage.setItem('id', userData[0][0]._id)
         localStorage.setItem('name', userData[0][0].role)
+        localStorage.setItem('user', userData[0][0].name)
         localStorage.setItem('email', userData[0][0].email)
         // localStorage.setItem('role', userData[0][0].userName)
     

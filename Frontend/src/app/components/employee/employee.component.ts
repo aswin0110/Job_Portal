@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class EmployeeComponent {
 
+  employername:any=localStorage.getItem('user')
 }

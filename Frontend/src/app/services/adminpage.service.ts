@@ -48,6 +48,9 @@ getadminname(id:any){
     return this.http.put(`http://localhost:3000/verifyjobapplies` ,item )
   }
 
+  getadminnames(item:any){
+    return this.http.post(`${this.apiUrl}/getnameadmin/adminname`, item)
+  }
 
 
 
