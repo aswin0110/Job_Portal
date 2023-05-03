@@ -7,11 +7,12 @@ import { HttpClient} from '@angular/common/http';
 export class ManageacemployeeService {
 
   constructor(private http:HttpClient) { }
-  // updatabook(id:any , data:any){
-  //   return this.http.put(`${this.api}/book/${data}` ,id)
-  // }
+ 
+  getemployer(id:any){
+    return this.http.get<any>('http://localhost:3000/api/employersignup/admin/employerdetails'+id)
+  }
 
-  // getCurrentdata(id:any){
-  //   return this.http.get(`${this.api}/book/${id}`)
-  // }
+  updateEmployer(employer: any,id:any) {
+    return this.http.put(`http://localhost:3000/api/manageemployee/employee/${id}`, employer);
+  }
 }

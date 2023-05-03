@@ -11,26 +11,31 @@ import { Router } from '@angular/router'
 })
 export class ManageaccountComponent implements OnInit {
 
-  editform:any = new FormGroup ({
-    Employer_Name: new FormControl(''),
-    Designation: new FormControl(''),
-    Email: new FormControl(''),
-    Phone_Number: new FormControl('')
-   })
+  employer: any;
+  id:any;
+
+
+  editform:any = new FormGroup({
+    companyname:new FormControl(''),
+    link:new FormControl(''),
+    hrname:new FormControl(''),
+    address:new FormControl(''),
+    location:new FormControl(''),
+    email:new FormControl(''),
+    password:new FormControl('')
+  })
   constructor( private manageservice:ManageacemployeeService , private router:ActivatedRoute , private route:Router) {}
 
   ngOnInit(): void {
-    // this.manageservice.getCurrentdata(this.router.snapshot.params['id']).subscribe((result=>{
-    //   this.editform = new FormGroup({
-    //     Employer_Name: new FormControl((result as any).Employer_Name),
-    //     Designation: new FormControl((result as any).Designation),
-    //     Email: new FormControl((result as any).Email),
-    //     Phone_Number: new FormControl((result as any).Phone_Number)
-
-    //   })
-    // console.log(this.router.snapshot.params['id'],"success")
-
-    // }))
+    const id = this.router.snapshot.paramMap.get('id');
+    this.manageservice.getemployer(id).subscribe((employer) => {
+      this.employer = employer;
+    });
   }
   
+  onSubmit() {
+    this.manageservice.updateEmployer(this.employer,this.id).subscribe((result) => {
+      console.log(result);
+    });
+  }
 }

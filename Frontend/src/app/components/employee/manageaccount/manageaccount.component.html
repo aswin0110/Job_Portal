@@ -2,21 +2,29 @@
 <div class="home-container">
     <section class="home">
 
-        <form [formGroup]="editform" method="post">
+        <form [formGroup]="editform" (ngSubmit)="onSubmit()">
             <h3>MANAGE ACCOUNT</h3>
-            <p>Employer Name</p>
-            <input type="text" name="title" placeholder="enter your name" required maxlength="15" class="input">
+            <p>Company Name</p>
+            <input type="text" name="companyname" placeholder="Company name" formControlName="companyname" required  class="input">
         
-            <p>Designation</p>
-            <input type="text" name="designation" placeholder="designation" required maxlength="25" class="input">
+            <p>Company Logo Link</p>
+            <input type="text" name="logo" placeholder="company logo" formControlName="link" required  class="input">
         
+            <p>HR Name</p>
+            <input type="text" name="name" placeholder="enter HR name" formControlName="hrname" required class="input">
+       
+            <p>Address</p>
+            <input type="text" name="address" placeholder="address" formControlName="address" required  class="input">
+       
+            <p>Location</p>
+            <input type="text" name="location" placeholder="location" formControlName="location" required  class="input">
+
             <p>Email</p>
-            <input type="text" name="email" placeholder="enter your email address" required maxlength="25" class="input">
-       
-            <p>Phone Number</p>
-          
-            <input type="text" name="phone" placeholder="phone number" required maxlength="10" class="input">
-       
+            <input type="email" name="email" placeholder="enter your email address" formControlName="email" required  class="input">
+
+            <p>Password</p>
+            <input type="Password" name="password" placeholder="enter your password" formControlName="password" required  class="input">
+
        <input type="submit" value="Update" class="btn">
         </form>
     </section>
