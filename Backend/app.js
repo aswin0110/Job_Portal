@@ -193,7 +193,55 @@ app.post('/posttocareer', async (req,res)=>{
 
 
 
+// countdown date
+function parseDate(input) {
+    const parts = input.split('/');
+    // Note: parts[0] is the day, parts[1] is the month (0-indexed), parts[2] is the year.
+    return new Date(parts[2], parts[1] - 1, parts[0]);
+  }
+  
+  app.post('/countdown', (req, res) => {
+    const inputCurrentDate = req.body.currentDate;
+    const inputTargetDate = req.body.date;
+    console.log("Input current date:", inputCurrentDate);
+    console.log("Input target date:", inputTargetDate);
+  
+    const currentDate = parseDate(inputCurrentDate);
+    const targetDate = parseDate(inputTargetDate);
+    console.log("Parsed current date:", currentDate);
+    console.log("Parsed target date:", targetDate);
+  
+    // Calculate the time difference in milliseconds
+    const timeDiff = targetDate.getTime() - currentDate.getTime();
+  
+    // Convert milliseconds to days
+    const countdown = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    console.log("Countdown:", countdown);
+  
+    res.json({ countdown });
+  });
 
+  
+
+// Find all users date  and return them as JSON
+const User = require('./model/jobformModel');
+
+app.get('/users', async (req, res) => {
+  try {
+    const users = await User.find({});
+    const formattedUsers = users.map(user => ({
+      name: user.name,
+      email: user.email,
+      date: user.date
+    }));
+    res.json(formattedUsers);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+  
 
 
 

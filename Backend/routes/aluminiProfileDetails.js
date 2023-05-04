@@ -90,6 +90,14 @@ router.put("/alumniProfileUpdate", (req, res) => {
 
 
 
+// alumni profile shows in a form to update
+router.get('/alumniprofile',async (req, res) => {
+  let item = req.body
+  console.log(item);
+  let alumnimodels = require('../model/alumniModel')
+  let data = await alumnimodels.findOne({firstname:item.name})
+  res.json({data})
+});
 
 
 module.exports = router;

@@ -9,6 +9,7 @@ export class jobDataModel {
       public Employment_Type: String,
       public description: String,
       public job_skill: String,
+      public date: Date
       
     ) {}
   }

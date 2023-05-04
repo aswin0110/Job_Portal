@@ -31,4 +31,9 @@ updateAlumniDetails(alumni: any) {
     });
 }
 
+// to get alumni datas in a form to update
+getAlumniProfile(id: string) {
+  return this.http.get<any>(`localhost:3000/api/alumnidb/alumniprofile`, { params: { id } });
+}
+
 }

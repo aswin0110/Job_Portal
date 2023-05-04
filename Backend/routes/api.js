@@ -30,7 +30,8 @@ router.use('/manageemployee', require('./manageemployee'))
 // employerfrontpg coursecount
 router.use('/countcourse', require('./coursecount'))
 
-
+// alumni profile manage account: /alumni/alumniprofile
+router.use('/alumnidb', require('./aluminiProfileDetails'))
 
 
 
