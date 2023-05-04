@@ -1,29 +1,4 @@
 <!-- 
-<div class="home-container">
-    <section class="home">
-
-        <form action="" method="post">
-            <h3>MANAGE JOB</h3>
-            <p>Company Name</p>
-            <input type="text" name="Company name" placeholder="enter Company name" required maxlength="15" class="input">
-        
-            <p>Job Title</p>
-            <input type="text" name="job title" placeholder="job title" required maxlength="25" class="input">
-        
-            <p>Location</p>
-            <input type="text" name="location" placeholder="location" required maxlength="25" class="input">
-       
-            <p>Salary</p>
-           <input type="text" name="salary" placeholder="salary" required maxlength="10" class="input">
-       
-            <p>Employment Type</p>
-          <input type="text" name="employment type" placeholder="employment type" required maxlength="10" class="input">
-       
-       <input type="submit" value="Update" class="btn">
-        </form>
-    </section>
-</div>
- -->
 
  <div class="container p-5">
     <div class="row">
@@ -93,4 +68,18 @@
             </div>
         </div>
     </div>
- </div>
+ </div> -->
+ <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let job of jobs">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{job.Company_Name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{job.company}}</h6>
+            <p class="card-text">{{job.Job_Title}}</p>
+            <a href="" class="card-link">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

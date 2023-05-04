@@ -4,6 +4,8 @@ const router = express.Router()
 
 const EmployerSignupModel = require('../model/employeeModel')
 
+const JobAppliedDATA = require('../model/jobAppliedModel');
+
 router.put('/employee/:id' , async(req,res)=>{
     
     try {
@@ -39,8 +41,16 @@ router.put('/employee/:id' , async(req,res)=>{
 
 
 
+// manage alumni applied job
 
-
+router.get('/jobs', async (req, res) => {
+  try {
+    const JobAppliedDATA = await Job.find({ adminverify: true }).exec();
+    res.status(200).json(JobAppliedDATA);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 
 

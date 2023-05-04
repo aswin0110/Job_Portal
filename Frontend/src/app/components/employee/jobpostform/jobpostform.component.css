@@ -1,4 +1,4 @@
-.example-container mat-form-field + mat-form-field + mat-form-field+mat-form-field{
+/* .example-container mat-form-field + mat-form-field + mat-form-field+mat-form-field{
     margin-left: 8px;
   }
   :host {
@@ -57,4 +57,71 @@ margin-top: 20px;
     width: 270px;
   }
 
- 
+  */
+
+
+  .home-container{
+    /* background:url('../../../../assets/images/update1.avif'), rgba(0,0,0,.7) no-repeat; */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color;
+}
+
+.home-container .home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.home-container .home form{
+    background-color: #0a0a0a;
+    width: 25rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.home-container .home form h3{
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: .5rem;
+    text-transform: capitalize;
+}
+
+.home-container .home form p{
+    text-align: left;
+    font-size: 1rem;
+    color: #777;
+    padding-top: .001rem;
+}
+
+.home-container .home form .input{
+    width: 100%;
+    border-radius: .5rem;
+    margin: .001rem ;
+    background-color: #eee;
+    padding: .1rem;
+    font-size: 1rem;
+    color: black;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: .4rem;
+    padding: .3rem ;
+    cursor: pointer;
+    font-size: .7rem;
+    color: black;
+    background-color: white;
+    border-radius: .5rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+.btn:hover{
+    background-color: black;
+    color: #fff;
+}

@@ -34,8 +34,40 @@
 
 
 
-  <div class="input-field">
-    <!-- <input type="submit" class="submit" value="Signup" > -->
-    <button> signup</button>
+
+
+<div class="home-container">
+  <section class="home">
+
+      <form [formGroup]="jobForm" (ngSubmit)="submitJob()">
+          <h3>MANAGE ACCOUNT</h3>
+          <p>Company_logo</p>
+          <input type="text" name="companyname" placeholder="Company name" formControlName="logo" required  class="input">
+      
+          <p>Company_Name</p>
+          <input type="text" name="logo" placeholder="company logo" formControlName="name" required  class="input">
+      
+          <p>Job_Title</p>
+          <input type="text" name="name" placeholder="enter HR name" formControlName="title" required class="input">
+     
+          <p>Job_location</p>
+          <input type="text" name="address" placeholder="address" formControlName="location" required  class="input">
+     
+          <p>start_Date</p>
+          <input type="text" name="location" placeholder="location" formControlName="date" required  class="input">
+
+          <p>Salary</p>
+          <input type="email" name="email" placeholder="salary" formControlName="salary" required  class="input">
+
+          <p>job_skill</p>
+          <input type="Password" name="password" placeholder="enter job skill" formControlName="skill" required  class="input">
+
+          <p>Employment_Type</p>
+          <input type="Password" name="password" placeholder="Employment Type" formControlName="type" required  class="input">
+
+          <p>description</p>
+          <input type="Password" name="password" placeholder="description" formControlName="description" required  class="input">
+     <input type="submit" value="ADD" class="btn">
+      </form>
+  </section>
 </div>
-</form>

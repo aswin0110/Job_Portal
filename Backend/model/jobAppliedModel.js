@@ -64,10 +64,10 @@ const JobAppliedSchema = new Schema ({
         
     },
     adminverify:{
-        type:String,
-        default:"applied"
+        type:Boolean,
+        required:true,
+        default:false
     }
-    
 })
     
 let JobAppliedDATA = Mongoose.model('jobAppliedDetails',JobAppliedSchema)
