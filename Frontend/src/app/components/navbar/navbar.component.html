@@ -34,7 +34,12 @@
                 <li class="nav-item"><a  class="nav-link" routerLink="/contactus"><i class="bi bi-telephone-fill"></i>Contact Us</a></li>
                 <li class="nav-item"><a  class="nav-link" routerLink="/aboutus"><i class="bi bi-person-fill"></i>About Us</a></li>
                 <li class="nav-item"><a  class="nav-link" routerLink="/login"><i class="bi bi-person"></i>Login</a></li>
-                <li class="nav-item"><a  class="nav-link" routerLink="/signup"><i class="bi bi-person-add"></i>Register</a></li>
+                <li class="nav-item"><a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" ><i class="bi bi-person-add"></i>Register</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/signup">Alumni</a></li>
+                    <li><a class="dropdown-item" routerLink="/employersignup">Employer</a></li>
+                  </ul>
+                </li>
                 <li class="nav-item" ><a  class="nav-link" *ngIf="showNavItem" (click)="clickme()"><i class="bi bi-person-add" ></i>Dashboard</a></li>
                 <li class="nav-item"  ><a  class="nav-link" routerLink="/" *ngIf="showNavItem" (click)="hideElement()"><i class="bi bi-person-add" ></i>Logout</a></li>
                 

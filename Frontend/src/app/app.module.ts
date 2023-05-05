@@ -37,6 +37,7 @@ import { AuthGuard } from './auth.guard'
 import { MaterialModule } from 'material.module';
 import { AlumniManageAccountComponent } from './components/alumni-manage-account/alumni-manage-account.component';
 import { JobApplicationUpdateComponent } from './components/job-application-update/job-application-update.component';
+import { EmplosignupComponent } from './pages/emplosignup/emplosignup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { JobApplicationUpdateComponent } from './components/job-application-upda
     JobpostformComponent,
     EmployeefrontComponent,
     AlumniManageAccountComponent,
-    JobApplicationUpdateComponent
+    JobApplicationUpdateComponent,
+    EmplosignupComponent
   ],
   imports: [
     BrowserModule,

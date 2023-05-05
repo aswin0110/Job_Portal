@@ -23,11 +23,13 @@ import { ManagejobComponent } from './components/employee/managejob/managejob.co
 import { ManageaccountComponent } from './components/employee/manageaccount/manageaccount.component';
 import { ProfilematchComponent } from './components/employee/profilematch/profilematch.component';
 import { EmployeefrontComponent } from './components/employee/employeefront/employeefront.component';
+import { EmplosignupComponent } from './pages/emplosignup/emplosignup.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
   {path:'login', component:LoginpageComponent},
   {path:'signup', component:SignupComponent},
+  {path:'employersignup', component:EmplosignupComponent},
   {path:'contactus', component:ContactusComponent},
   {path:'career', component:CareerComponent},
   {path:'aboutus', component:AboutusComponent},
