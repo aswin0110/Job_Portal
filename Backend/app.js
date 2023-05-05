@@ -245,7 +245,39 @@ app.get('/users', async (req, res) => {
 
 
 
+app.post('/countdowns', (req, res) => {
+  const startDate = new Date(req.body.startDate);
+  const endDate = new Date(req.body.endDate);
+  const now = new Date();
+  console.log( now);
+  console.log( startDate);
+  console.log( endDate);
 
+  if (startDate > endDate) {
+    return res.status(400).json({ error: 'End date should be after start date' });
+  }
+
+  const diff = endDate.getTime() - startDate.getTime();
+  const remaining = endDate.getTime() - now.getTime();
+
+  if (remaining < 0) {
+    return res.json({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  }
+
+  const days = Math.max(Math.floor(remaining / (1000 * 60 * 60 * 24)), 0);
+  const hours = Math.max(Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)), 0);
+  const minutes = Math.max(Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60)), 0);
+  const seconds = Math.max(Math.floor((remaining % (1000 * 60)) / 1000), 0);
+
+  res.json({ days, hours, minutes, seconds });
+  
+});
+
+
+
+
+
+ 
 
 app.listen(PORT, ()=>{
     console.log(`..........Server is running in ${PORT}..........`);

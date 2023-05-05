@@ -18,9 +18,9 @@ const JobSchema = new Schema ({
         type:String,
         required:true
     },
-    start_Date:{
-        type:String,
-        required:true
+    postdate:{
+        type: Date,
+		default: Date.now
     },
     Salary:{
         type:String,
@@ -40,16 +40,10 @@ const JobSchema = new Schema ({
         type:String,
         required:true
     },
-    date: {
+    start_Date: {
         type: Date,
-        default: Date.now,
-        get: function(date) {
-          // This function formats the date as "dd/mm/yyyy"
-          const day = date.getDate().toString().padStart(2, '0');
-          const month = (date.getMonth() + 1).toString().padStart(2, '0');
-          const year = date.getFullYear().toString();
-          return `${day}/${month}/${year}`;
-        }
+        require:true
+
       }
 })
     
