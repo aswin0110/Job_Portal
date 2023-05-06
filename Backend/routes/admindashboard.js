@@ -85,5 +85,48 @@ router.post('/', async (req, res) => {
     console.log(data);
   });
   
+  // get admin name in dashboard
+  router.post('/apiadmin', async (req,res) =>{
+    const collection = require('../model/adminModel')
 
+    let item = req.body
+    let data = await collection.findOne(item, { name: 1, _id: 0 })
+    res.json(data)
+    console.log(data);
+    console.log(data);
+})
+
+
+// wheen the email id matches you can get the data from db
+router.get('/apijobapply', async (req,res) =>{
+  const jobappliedData = require('../model/jobAppliedModel')
+      let item = req.body
+      let data = await jobappliedData.find()
+      res.json(data)
+      console.log(data);
+  })
+
+
+  // when id matches adminverify will change
+router.put('/deletejobapplies', async (req,res)=>{
+  let item = req.body
+  console.log(item,"gfgfg");
+  const jobappliedData = require('../model/jobAppliedModel')
+
+  let datas = await jobappliedData.findByIdAndUpdate({_id:item._id}, {adminverify:'reject'})
+  res.json({message:'data updated'})
+
+  
+})
+
+// when click verify 
+router.put('/verifyjobapplies', async (req,res)=>{
+  let item = req.body
+  console.log(item,"gfgfg");
+  const jobappliedData = require('../model/jobAppliedModel')
+
+  let datas = await jobappliedData.findByIdAndUpdate({_id:item._id}, {adminverify:'verified'})
+  res.json({message:'data updated'})
+
+})
   module.exports = router

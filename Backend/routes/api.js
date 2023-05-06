@@ -33,11 +33,18 @@ router.use('/countcourse', require('./coursecount'))
 // alumni profile manage account: /alumni/alumniprofile
 router.use('/alumnidb', require('./aluminiProfileDetails'))
 
+// get admin name in dashboard
+router.use('/apiadmin', require('./admindashboard'))
 
 
+// get all alumni applied job post details to admin verify
+router.use('/apijobapply', require('./admindashboard'))
 
+// not for frontend
+router.use('/deletejobapplies', require('./admindashboard'))
 
-
+// verify alumni appied job post 
+router.use('/verifyjobapplies', require('./admindashboard'))
 
 // get admin name in a dashboard when id matches
 router.use('/getnameadmin', require('./admindashboard'))
@@ -45,7 +52,6 @@ router.use('/getnameadmin', require('./admindashboard'))
 // alumni profile get
 router.use('/alumni', require('./admindashboard'))
 
-// get data in a table: alumni job applied verify or decline from admin
 
 
 

@@ -12,6 +12,9 @@ export class JobpostformService {
   //   return this.http.post(`${this.api}/book` , data)
   // }
 
+  // apiUrl:String = `api`
+  apiUrl:String = 'http://localhost:3000/api'
+
   // Job get data to career page
   getJobDetails() {
     return this.http.get<any>('http://localhost:3000/career/jobDetails');
@@ -33,17 +36,17 @@ export class JobpostformService {
 
 // employer job post form
   addjobpost(data:any){
-    return this.http.post<any>('http://localhost:3000/api/jobpost/',data)
+    return this.http.post<any>(`${this.apiUrl}/jobpost/`,data)
   }
 
   // count for course
   coursecount(){
-    return this.http.get('http://localhost:3000/api/countcourse/data/countcourse' )
+    return this.http.get(`${this.apiUrl}/countcourse/data/countcourse`)
   
   }
 
   coursename(){
-    return this.http.get('http://localhost:3000/api/countcourse/data/coursename' )
+    return this.http.get(`${this.apiUrl}/countcourse/data/coursename`)
   
   }
 

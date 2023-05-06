@@ -33,7 +33,7 @@ export class AnalyticsComponent {
   getalucount(){
     this.api.alumnicount().subscribe((res:any)=>{
       // console.log(res);
-      this.alumncount = res.data.name
+      this.alumncount = res
       
     })
   }

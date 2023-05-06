@@ -5,12 +5,14 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class LoginService {
-  // apiUrl:String = 'http://localhost:3000/api/auth'
+
+  // apiUrl:String = `api`
+apiUrl:String = 'http://localhost:3000/api'
 
   constructor(private http:HttpClient) { }
 
   login(data:any){
-    return this.http.post<any>('http://localhost:3000/api/login',data)
+    return this.http.post<any>(`${this.apiUrl}/login`,data)
   }
   
   getToken(){                                //for token interceptor

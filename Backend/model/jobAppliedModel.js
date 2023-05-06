@@ -64,9 +64,9 @@ const JobAppliedSchema = new Schema ({
         
     },
     adminverify:{
-        type:Boolean,
+        type:String,
         required:true,
-        default:false
+        default:"Applied"
     }
 })
     
