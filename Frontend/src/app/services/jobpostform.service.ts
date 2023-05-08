@@ -52,7 +52,7 @@ export class JobpostformService {
 
 
   jobposttocareer(item:any){
-    return this.http.post(`http://localhost:3000/posttocareer`, item)
+    return this.http.post(`${this.apiUrl}/posttocareer/posttocareer`, item)
   }
 }
 

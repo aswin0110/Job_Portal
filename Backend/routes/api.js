@@ -52,6 +52,8 @@ router.use('/getnameadmin', require('./admindashboard'))
 // alumni profile get
 router.use('/alumni', require('./admindashboard'))
 
+router.use('/posttocareer', require('./coursecount'))
+
 
 // alumni services
 

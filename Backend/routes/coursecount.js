@@ -24,4 +24,27 @@ router.get('/data/countcourse', async (req, res) => {
       res.status(500).send('Server Error');
     }
   });
+
+
+  router.post('/posttocareer', async (req,res)=>{
+    
+
+    try {
+        let item = req.body
+    console.log(item);
+
+    const jobmodels = require('./model/jobformModel')
+
+    const datajobtocareer = new jobmodels(item)
+    await datajobtocareer.save()
+
+    res.json({status:'1'})
+        
+    } catch (error) {
+        res.json({error})
+        console.log(error.message);
+        
+    }
+})
+
   module.exports = router
