@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenInterceptorService } from 'src/app/services/token-interceptor.service';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,14 +14,17 @@ export class NavbarComponent {
   isElementHidden = false;
    login:any = ''
    showNavItem: any;
+   loginhide:any = ''
 
-  constructor(private apitoken:TokenInterceptorService, private router: Router){
+  constructor(private apitoken:TokenInterceptorService, private router: Router,private toastr:ToastrService){
     
   }
 
   ngOnInit(){
     this.showNavItem = localStorage.getItem('name') ;
     console.log(this.showNavItem);
+    
+
   }
 
 // for dashboard
@@ -44,43 +49,18 @@ export class NavbarComponent {
 
   // for logout
   hideElement() {
-
-    
-    // this.isElementHidden = false;x
     let token =localStorage.getItem('token');
-    // console.log(token);
 
-    // when clicking logout button jwt token will delete and button should be hidden
     const tokenvalue = localStorage.getItem('token')
     const userroles = localStorage.getItem('name')
-
-    // if(userroles=='alumni'){
-    //   console.log('logined user is a alumni');
-      
-    // }
-    
-    // console.log(userroles);
-
-    // if(tokenvalue!=''){
-    // this.login = tokenvalue
-    // this.apitoken.removeToken() 
     localStorage.removeItem('token')
     localStorage.removeItem('id')
     localStorage.removeItem('name')
     localStorage.removeItem('email')
+    localStorage.removeItem('user')
     location.reload();
 
-
-
-    //   console.log('logout button popup');
-    //   alert('successfully lgouted');
-      
-      
-    // }
-    // else{
-    //   console.log('please login');
-
-    // }
+    this.toastr.success('Logut Successfull')
     
 
     

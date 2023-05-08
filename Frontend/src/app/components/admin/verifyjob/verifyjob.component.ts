@@ -26,17 +26,25 @@ export class VerifyjobComponent {
 
   deleteapply(item:any){
     this.api.updatejobapply({_id:item}).subscribe((res:any)=>{
-      alert('deleted successfully')
+      alert('Rejected successfully')
       this.ngOnInit()
     })
   }
 
   verifydata(item:any){
+
+    if(localStorage.getItem('name')=="admin"){
+      
     this.api.verifyjobapply({_id:item}).subscribe((res:any)=>{
       alert('verify successfully')
       
       this.ngOnInit()
     })
+    
+  }else{
+    alert('please login as admin ');
+    
+  }
   }
 
   // getdata(){

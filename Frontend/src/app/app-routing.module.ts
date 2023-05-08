@@ -35,7 +35,7 @@ const routes: Routes = [
   {path:'aboutus', component:AboutusComponent},
   {path:'jobapplication', component:JobApplicationComponent},
   {path:'studentProfileCreate', component:StudentProfileCreateComponent},
-  {path:'admin',component:AdminComponent,
+  {path:'admin', component:AdminComponent,
   children:[
     {path:'manage',component:ManageacComponent},
     {path:'verify',component:VerifyjobComponent},

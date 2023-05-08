@@ -14,6 +14,7 @@ export class AdminComponent {
   name = localStorage.getItem('id')
   ngOnInit(){
     // this.getadminnames();
+    
     this.getadminnam()
 
   }

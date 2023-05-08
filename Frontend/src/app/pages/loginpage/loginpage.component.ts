@@ -55,16 +55,15 @@ constructor(private builder:FormBuilder, private toastr:ToastrService,
           console.log(userData.status)
           this.status = "Account doesn't exists"
           // this.status = "Account doesn't exists"
-this.toastr.success('logged successfully')
-
-this.router.navigateByUrl('/career')
+          this.toastr.error('Please check email or password')
+          // this.router.navigateByUrl('/career')
 
           return
 
         }else if(userData.status == "2"){
           console.log(userData.status)
           this.status = "Invalid credentials"
-this.toastr.error('Invalid credentials')
+          this.toastr.error('Invalid credentials')
 
           return 
         }
@@ -76,9 +75,10 @@ this.toastr.error('Invalid credentials')
         localStorage.setItem('email', userData[0][0].email)
         // localStorage.setItem('role', userData[0][0].userName)
     
+        this.toastr.success('Login Success')
+        
     
-    
-        this.router.navigateByUrl('')
+        this.router.navigateByUrl('career')
         location.reload();
 
       })

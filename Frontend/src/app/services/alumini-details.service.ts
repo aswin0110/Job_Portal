@@ -6,26 +6,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AluminiDetailsService {
-
+// apiUrl:String = `api`
+apiUrl:String = 'http://localhost:3000/api'
   constructor(private http:HttpClient) { }
 
 // Add alimini profile details
 addAlumniProfileDetails(alumniData: any) {
   return this.http.post<any>(
-    'http://localhost:3000/alumni/addAlumniProfileDetails',
+    `${this.apiUrl}/addAlumniProfileDetails/addAlumniProfileDetails`,
     alumniData
   );
 }
 
 // get alumini details to update by ID 
 getAlumniProfileDetails(id:any) {
-  return this.http.get('http://localhost:3000/alumni/alumniDetails/' + id);
+  return this.http.get(`${this.apiUrl}/alumniDetails/alumniDetails/` + id);
 }
 // update Alumini Details
 updateAlumniDetails(alumni: any) {
   console.log('update profile Details');
   return this.http
-    .put('http://localhost:3000/alumni/alumniProfileUpdate/', alumni)
+    .put(`${this.apiUrl}/alumniProfileUpdate/alumniProfileUpdate`, alumni)
     .subscribe((data) => {
       console.log(data);
     });
@@ -33,7 +34,7 @@ updateAlumniDetails(alumni: any) {
 
 // to get alumni datas in a form to update
 getAlumniProfile(id: string) {
-  return this.http.get<any>(`localhost:3000/api/alumnidb/alumniprofile`, { params: { id } });
+  return this.http.get<any>(`${this.apiUrl}alumnidb/alumniprofile/alumniprofile`, { params: { id } });
 }
 
 }

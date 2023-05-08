@@ -53,7 +53,15 @@ router.use('/getnameadmin', require('./admindashboard'))
 router.use('/alumni', require('./admindashboard'))
 
 
+// alumni services
+
+router.use('/addAlumniProfileDetails' , require('./aluminiProfileDetails'))
 
 
+router.use('/alumniDetails', require('./aluminiProfileDetails'))
+
+router.use('/alumniProfileUpdate', require('./aluminiProfileDetails'))
+
+router.use('/alumniprofile', require('./aluminiProfileDetails'))
 
 module.exports = router
