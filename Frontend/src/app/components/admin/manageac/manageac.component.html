@@ -46,35 +46,14 @@
                   </div>
               </div>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-12 col-12 mb-5">
-              <!-- card -->
-              <div class="card h-100 card-lift">
-                  <!-- card body -->
-                  <div class="card-body createbtn" (click)="getaludata()">
-                      <!-- heading -->
-                      <div class="d-flex justify-content-between align-items-center mb-3">
-                          <div>
-                              <h4 class="mb-0">Search Account</h4>
-                          </div>
-                          <div class="icon-shape icon-md bg-primary-soft text-primary rounded-2">
-                            <i class="bi fa-2x bi-person-plus-fill"></i>
-                          </div>
-                      </div>
-                      <!-- project number -->
-                      <div class="lh-1">
-                          <h1 class=" mb-1 fw-bold">Alumni</h1>
-                          <p class="mb-0"><span class="text-dark me-2"></span></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
+          
           
 
 
           <div class="cards">
             <!-- card header  -->
             <div class="card-header ">
-                <h4 class="mb-0">List Of Company</h4>
+                <h4 class="mb-0">List Of Alumni</h4>
             </div>
             <!-- table  -->
             <div class="card-body">
@@ -93,26 +72,15 @@
                             </th> -->
                             <th>Alumni Name</th>
                             <th>Email Address</th>
-                            <th>Qualification</th>
-                            <th>Course</th>
-                            <th>Current Staus</th>
-                            <th>Update</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                     <tr *ngFor="let item of accounts">
                         <td>{{item.name}}</td>
                         <td>{{item.email}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.name}}</td>
                         
-                        <td class="text-danger deletebtn">
-                          <div class="testing">
-                            <span class="bi bi-trash3"></span> Delete
-                          </div>
-                        </td>
-                      </tr>
+                        
                       <!-- <tr>
                         <td>Akhil</td>
                         <td>amal521@gmail.com</td>

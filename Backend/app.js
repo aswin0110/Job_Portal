@@ -30,7 +30,7 @@ app.use('/api', api)
 
 // app.use('/alumni', alumniProfileRoute);
 
-// app.use('/career', JobCareerRoute );
+app.use('/career', JobCareerRoute );
 
 
 

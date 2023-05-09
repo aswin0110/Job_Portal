@@ -46,16 +46,16 @@ const routes: Routes = [
 {path:'alumni', component:AlumniComponent,
   children:[
     {path:'manageJobPost', component:AlumniManageJobpostComponent},
-    {path:'manageAccount', component:AlumniManageAccountComponent},
+    // {path:'manageAccount', component:AlumniManageAccountComponent},
     
   ]
 },
 {path:'employee',component:EmployeeComponent,
   children:[
     {path:'jobpost',component:JobpostComponent},
-    {path:'manage_job',component:ManagejobComponent},
-    {path:'manage_account',component:ManageaccountComponent},
-    {path:'profile_match',component:ProfilematchComponent},
+    // {path:'manage_job',component:ManagejobComponent},
+    // {path:'manage_account',component:ManageaccountComponent},
+    // {path:'profile_match',component:ProfilematchComponent},
     {path:'',component:EmployeefrontComponent}
   ]  
 },
