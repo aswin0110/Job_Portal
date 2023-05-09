@@ -1,33 +1,41 @@
-<form [formGroup]="item" (ngSubmit)="onSubmitpost()">
-  <div class="input-field">
-    <input type="text" class="input" placeholder="Company_Logo" required formControlName="Company_Logo">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="Company_Name" required formControlName="Company_Name">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="Job_Title" required formControlName="Job_Title">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="Job_locaion" required formControlName="Job_locaion">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="Salary" required formControlName="Salary">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="job_skill" required formControlName="job_skill">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="start_Date" required formControlName="start_Date">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="description" required formControlName="description">
-  </div>
-  <div class="input-field">
-    <input type="text" class="input" placeholder="Employment_Type" required formControlName="Employment_Type">
-  </div>
-  <div class="input-field">
-    <!-- <input type="submit" class="submit" value="Signup" > -->
-    <button> signup</button>
+
+<div class="home-container">
+  <section class="home">
+
+    <form [formGroup]="item" (ngSubmit)="onSubmitpost()">
+      <div class="input-field">
+        <input type="text" class="input" placeholder="Company_Logo" required formControlName="Company_Logo">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="Company_Name" required formControlName="Company_Name">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="Job_Title" required formControlName="Job_Title">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="Job_locaion" required formControlName="Job_locaion">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="Salary" required formControlName="Salary">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="job_skill" required formControlName="job_skill">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="start_Date" required formControlName="start_Date">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="description" required formControlName="description">
+      </div>
+      <div class="input-field">
+        <input type="text" class="input" placeholder="Employment_Type" required formControlName="Employment_Type">
+      </div>
+      <div class="input-field">
+        <!-- <input type="submit" class="submit" value="Signup" > -->
+        <button class="btn"> signup</button>
+    </div>
+    </form>
+
+  </section>
 </div>
-</form>
+
