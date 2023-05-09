@@ -17,18 +17,18 @@ export class JobpostformService {
 
   // Job get data to career page
   getJobDetails() {
-    return this.http.get<any>(`${this.apiUrl}jobDetails/jobDetails`);
+    return this.http.get<any>(`${this.apiUrl}/jobDetails/jobDetails`);
   }
 
   // Job get single data job application page
   getSingleJobDetails(id: any) {
-    return this.http.get(`${this.apiUrl}jobDetails/jobDetails` + id);
+    return this.http.get(`${this.apiUrl}/jobDetails/jobDetails` + id);
   }
 
   // Apply for particular job 
   applyJob(jobAppliedData: any) {
     return this.http.post<any>(
-      `${this.apiUrl}appliedJob/appliedJob`,
+      `${this.apiUrl}/appliedJob/appliedJob`,
       jobAppliedData
     );
   }
