@@ -66,4 +66,9 @@ router.use('/alumniProfileUpdate', require('./aluminiProfileDetails'))
 
 router.use('/alumniprofile', require('./aluminiProfileDetails'))
 
+
+//  for career
+
+router.use('/jobDetails', require('./jobform'))
+router.use('/appliedJob', require('./jobform'))
 module.exports = router
