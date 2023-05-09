@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class SignupService {
 
-  // apiUrl:String = `api`
-  apiUrl:String = 'http://localhost:3000/api'
+  apiUrl:String = `api`
+  // apiUrl:String = 'http://localhost:3000/api'
 
   constructor(private http:HttpClient) { }
 

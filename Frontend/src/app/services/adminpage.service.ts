@@ -9,8 +9,8 @@ export class AdminpageService {
 
   constructor(private http:HttpClient) { }
 
-// apiUrl:String = `api`
-apiUrl:String = 'http://localhost:3000/api'
+apiUrl:String = `api` 
+// apiUrl:String = 'http://localhost:3000/api'
 
 employercount(){
   return this.http.get(`${this.apiUrl}/count/data/countemployee` )

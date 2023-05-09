@@ -12,8 +12,8 @@ export class JobpostformService {
   //   return this.http.post(`${this.api}/book` , data)
   // }
 
-  // apiUrl:String = `api`
-  apiUrl:String = 'http://localhost:3000/api'
+  apiUrl:String = `api`
+  // apiUrl:String = 'http://localhost:3000/api'
 
   // Job get data to career page
   getJobDetails() {

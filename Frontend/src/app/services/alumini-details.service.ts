@@ -6,8 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AluminiDetailsService {
-// apiUrl:String = `api`
-apiUrl:String = 'http://localhost:3000/api'
+
+apiUrl:String = `api`
+// apiUrl:String = 'http://localhost:3000/api'
+
   constructor(private http:HttpClient) { }
 
 // Add alimini profile details

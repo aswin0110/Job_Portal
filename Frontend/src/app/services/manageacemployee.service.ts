@@ -9,8 +9,10 @@ import { Observable } from 'rxjs';
 export class ManageacemployeeService {
 
   constructor(private http:HttpClient) { }
- // apiUrl:String = `api`
-apiUrl:String = 'http://localhost:3000/api'
+
+ apiUrl:String = `api`
+// apiUrl:String = 'http://localhost:3000/api'
+
   getemployer(id:any){
     return this.http.get<any>(`${this.apiUrl}/employersignup/admin/employerdetails`+id)
   }
